@@ -1,0 +1,239 @@
+version: '2'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:6.0.0
+    hostname: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - lakehouse
+
+  broker:
+    image: confluentinc/cp-kafka:6.0.0
+    hostname: broker
+    container_name: broker
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "9999:9999"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:9092,PLAINTEXT_INTERNAL://broker:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_JMX_PORT: 9999
+      KAFKA_JMX_HOSTNAME: localhost
+    networks:
+      - lakehouse
+
+  connect:
+    image: confluentinc/cp-kafka-connect:latest
+    hostname: connect
+    container_name: connect
+    depends_on:
+      - broker
+    ports:
+      - "8083:8083"
+    command:
+      - bash
+      - -c
+      - |
+        confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:latest
+        confluent-hub install --no-prompt confluentinc/kafka-connect-datagen:latest
+        confluent-hub install --no-prompt debezium/debezium-connector-mysql:latest
+        /etc/confluent/docker/run
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: broker:9092
+      CONNECT_REST_ADVERTISED_HOST_NAME: connect
+      CONNECT_REST_PORT: 8083
+      CONNECT_GROUP_ID: compose-connect-group
+      CONNECT_CONFIG_STORAGE_TOPIC: docker-connect-configs
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_OFFSET_FLUSH_INTERVAL_MS: 10000
+      CONNECT_OFFSET_STORAGE_TOPIC: docker-connect-offsets
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_STATUS_STORAGE_TOPIC: docker-connect-status
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
+      CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
+      CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
+      CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
+      CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
+      KAFKA_JMX_OPTS: -Dcom.sun.management.jmxremote=true -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=connect -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.rmi.port=5555 -Dcom.sun.management.jmxremote.port=5555
+    volumes:
+      - ./connect-config:/connect
+    networks:
+      - lakehouse
+
+  mysql:
+    image: debezium/example-mysql:1.7
+    hostname: mysql
+    container_name: mysql
+    depends_on:
+      - broker
+    environment:
+      - MYSQL_ROOT_PASSWORD=debezium
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpw
+    ports:
+      - '3306:3306'
+    networks:
+      - lakehouse
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:7.0.1
+    container_name: schema-registry
+    depends_on:
+      - broker
+    environment:
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: 'PLAINTEXT://broker:9092'
+      SCHEMA_REGISTRY_HOST_NAME: 'schema-registry'
+      SCHEMA_REGISTRY_LOG4J_ROOT_LOGLEVEL: 'INFO'
+    ports:
+      - 8081:8081
+      - 8085:8085
+    networks:
+      - lakehouse
+    
+  akhq:
+    image: tchiotludo/akhq
+    container_name: akhq
+    environment:
+      AKHQ_CONFIGURATION: |
+        akhq:
+          connections:
+            docker-kafka-server:
+              properties:
+                bootstrap.servers: "broker:9092"
+              schema-registry:
+                url: "http://schema-registry:8081"
+              connect:
+                - name: "kafka-connect"
+                  url: "http://connect:8083"
+    ports:
+      - 8084:8080
+    links:
+      - broker  
+    networks:
+      - lakehouse
+  
+  spark-master:
+    image: ducdn01/cluster-apache-spark:3.1.1 # docker build -t ducdn01/cluster-apache-spark:3.1.1./Dockerfiles/spark
+    container_name: master
+    ports:
+      - "9090:8080"
+      - "7077:7077"
+    volumes:
+       - ./spark/workspace:/opt/workspace
+       - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
+    env_file:
+      - ./spark/conf/spark-config.env
+    environment:
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_WORKLOAD=master
+      - PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/spark/bin:/opt/spark/sbin
+    networks:
+      - lakehouse
+    
+  # spark-worker-a:
+  #   image: ducdn01/cluster-apache-spark:3.1.1
+  #   container_name: worker-a
+  #   ports:
+  #     - "9091:8080"
+  #     - "7000:7000"
+  #   depends_on:
+  #     - spark-master
+  #   environment:
+  #     - SPARK_MASTER=spark://spark-master:7077
+  #     - SPARK_WORKER_CORES=1
+  #     - SPARK_WORKER_MEMORY=1G
+  #     - SPARK_DRIVER_MEMORY=1G
+  #     - SPARK_EXECUTOR_MEMORY=1G
+  #     - SPARK_WORKLOAD=worker
+  #     - SPARK_LOCAL_IP=spark-worker-a
+  #   volumes:
+  #     - ./spark/workspace:/opt/workspace
+  #     - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
+  #   networks:
+  #     - lakehouse
+
+  minio:
+    image: quay.io/minio/minio
+    container_name: minio
+    environment:
+        - MINIO_ROOT_USER=admin
+        - MINIO_ROOT_PASSWORD=123456789
+    ports:
+        - "9001:9001"
+        - "9000:9000"
+    # volumes:
+    #     - ./minio/data:/data
+    command: server /data --console-address ":9001" 
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+        interval: 30s
+        timeout: 30s
+        retries: 3
+    networks:
+      - lakehouse
+
+  postgres_db:
+    image: postgres:14.1-alpine
+    container_name: dwh_postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=dwh_streaming
+    ports:
+      - '5432:5432'
+    # volumes:
+    #   - postgres:/var/lib/postgresql/data
+    networks:
+      - lakehouse
+
+  # db:
+  #   image: postgres
+  #   restart: always
+  #   environment:
+  #     POSTGRES_DB: superset
+  #     POSTGRES_PASSWORD: superset
+  #     POSTGRES_USER: superset
+  #   volumes:
+  #     - postgres:/var/lib/postgresql/data
+  #   networks:
+  #     - lakehouse
+
+  # redis:
+  #   image: redis
+  #   restart: always
+  #   volumes:
+  #     - redis:/data
+  #   networks:
+  #     - lakehouse
+
+  superset:
+    image: amancevice/superset
+    restart: always
+    ports:
+      - "8088:8088"
+    networks:
+      - lakehouse
+
+volumes:
+  postgres:
+  redis:
+  
+networks:
+  lakehouse:
+    driver: bridge

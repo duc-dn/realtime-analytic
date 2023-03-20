@@ -1,0 +1,7 @@
+pyspark == 3.1.1
+mysql-connector-python
+Faker
+requests
+confluent-kafka
+delta-spark==1.0.1
+coloredlogs
