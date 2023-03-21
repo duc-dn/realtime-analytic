@@ -4,7 +4,7 @@ from datetime import date
 
 from delta.tables import *
 from pyspark.sql.window import Window
-from pyspark.sql.functions import col, from_json, conv, hex, expr, substring, avg, sum as _sum, rank
+from pyspark.sql.functions import col, from_json, conv, hex, expr, substring, avg, sum as _sum, rank, when
 from pyspark.sql import SparkSession
 from pyspark.sql.dataframe import DataFrame
 from pyspark.sql.types import StringType, DoubleType
@@ -113,16 +113,23 @@ class DeltaSink:
             from_avro(col("fixed_value"), schema).alias("parsed_value")
         )
         
+        # get primary key of delta table
+        pk = TABLE_MAPPINGS[topic]["pk"]
+
+        primary_keys_fulfill = [
+                    when(col("parsed_value.op") == "d", col(f"parsed_value.before.{pk}"))
+                        .otherwise(col(f"parsed_value.after.{pk}"))
+                        .alias(f"before_{pk}")
+                ]
+
         # select necessary fields
         df = df.select(
             "parsed_value.op",
             "parsed_value.ts_ms",
-            "parsed_value.after.*"
+            "parsed_value.after.*",
+            *primary_keys_fulfill
         )
 
-        df.show()
-        # get primary key of delta table
-        pk = TABLE_MAPPINGS[topic]["pk"]
         by_primary_key = Window.partitionBy(
                 pk
             ).orderBy(col("ts_ms").desc())
@@ -135,17 +142,17 @@ class DeltaSink:
                 .dropDuplicates([pk])
         )
         df.show(truncate=True)
-        df.printSchema()
         delta_table = self.get_delta_table(topic)
         if delta_table:
             (
                 delta_table.alias("target")
                     .merge(
                         source=df.alias("source"), 
-                        condition=f"target.{pk} = source.{pk}"
+                        condition=f"target.{pk} = source.before_{pk}"
                     )
-                    .whenMatchedUpdateAll()
-                    .whenNotMatchedInsertAll()
+                    .whenMatchedDelete(condition="source.op = 'd'")
+                    .whenMatchedUpdateAll(condition="source.op <> 'd'")
+                    .whenNotMatchedInsertAll(condition="source.op <> 'd'")
                     .execute()
             )
         else:
@@ -200,7 +207,7 @@ class DeltaSink:
                     self.foreach_batch_function_incremental
                 )
                 .trigger(processingTime="60 seconds")
-                .option("checkpointLocation", f"s3a://datalake/brozen/checkpoint/{topic}")
+                # .option("checkpointLocation", f"s3a://datalake/brozen/checkpoint/{topic}")
                 .start()
             )
         self.spark.streams.awaitAnyTermination()
@@ -211,6 +218,7 @@ class DeltaSink:
     def run(self) -> None:
         try:
             self.ingest_mutiple_topic()
+            logger.info("Table existed!!")
         except AnalysisException as e:
             logger.error(f'Error: {e}')
 

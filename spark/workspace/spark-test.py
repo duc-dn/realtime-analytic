@@ -1,7 +1,7 @@
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StringType, DoubleType
-from pyspark.sql.functions import sum as _sum, avg
+from pyspark.sql.functions import sum as _sum, avg, expr, window, from_unixtime, col
 
 conf = SparkConf()
 conf.set("spark.hadoop.fs.s3a.impl",
@@ -41,18 +41,47 @@ spark_sc = spark.sparkContext
 spark_sc.setLogLevel('ERROR')
 
 
-orderDF = spark.readStream.option("ignoreChanges", "true").format("delta").load("s3a://datalake/brozen/cdc.inventory.orders")
-productDF = spark.readStream.option("ignoreChanges", "true").format("delta").load("s3a://datalake/brozen/cdc.inventory.products")
-customerDF = spark.readStream.option("ignoreChanges", "true").format("delta").load("s3a://datalake/brozen/cdc.inventory.customers")
+# joinDF.writeStream.format
+# Load delta tables and assign aliases
+orders = (spark.readStream.option("ignoreChanges", "true").format("delta").load("s3a://datalake/brozen/cdc.inventory.orders")
+            .alias("orders"))
+products = (spark.readStream.option("ignoreChanges", "true").format("delta").load("s3a://datalake/brozen/cdc.inventory.products")
+              .alias("products"))
+customers = (spark.readStream.option("ignoreChanges", "true").format("delta").load("s3a://datalake/brozen/cdc.inventory.customers")
+               .alias("customers"))
 
-joinDF = orderDF.join(customerDF, customerDF.id == orderDF.purchaser, "inner") \
-                    .join(productDF, productDF.id == orderDF.product_id, "inner") \
+joinDF = orders.join(customers, customers.id == orders.purchaser, "inner") \
+                    .join(products, products.id == orders.product_id, "inner") \
                     .selectExpr("order_number", "order_date as order_time", "email", "purchaser", 
-                                "name as product_name", "quantity", "weight as unit_price")
+                                "name as product_name", "quantity", "weight", "orders.ts_ms as timestamp") \
+                    .withColumn("timestamp", (col("timestamp") / 1000).cast("timestamp"))
 
-calDF = joinDF.withColumn(
-  	    "total_price", joinDF.quantity * joinDF.unit_price)
+# joinDF.writeStream.format("console").start().awaitTermination()
 
+test = (
+    joinDF
+    .withWatermark("timestamp", "1 minutes")
+    .groupBy(col("email"), "timestamp")
+    .agg(
+        _sum("weight").alias("total_weight")
+    )
+    .writeStream
+    .outputMode("append")
+    .format("delta")
+    .option("checkpointLocation", "s3a://datalake/sliver/checkpoint")
+    .start("s3a://datalake/sliver")
+)
+test.awaitTermination()
+
+
+# Join the dataframes using SQL syntax
+# joinDF = (orders.join(customers, "customers.id == orders.purchaser", "inner")
+#               .join(products, "products.id == orders.product_id", "inner")
+#               .selectExpr("order_number", "order_date as order_time", "email", "purchaser", 
+#                           "name as product_name", "quantity", "weight as unit_price"))
+
+# # Write the result to console
+# joinDF.writeStream.format("console").start().awaitTermination()
 # total_spent_DF = calDF \
 #         .groupBy("email") \
 #         .agg(_sum("total_price")) 
@@ -69,15 +98,3 @@ calDF = joinDF.withColumn(
 #             .agg(
 #                 avg("unit_price").alias("ave_unit_price")
 #             )
-
-# total_spent_DF.writeStream.format("delta").option("checkpointLocation", "s3a://datalake/sliver/checkpoint/total_spent_Df") \
-#                     .start("s3a://datalake/sliver/total_spent_Df")
-
-calDF.writeStream.format("delta").option("checkpointLocation", "s3a://datalake/sliver/checkpoint/cal_DF") \
-                    .outputMode("append").start("s3a://datalake/sliver/cal_DF").awaitTermination()
-
-# calDF.writeStream.format("delta").option("checkpointLocation", "s3a://datalake/sliver/checkpoint/calDF") \
-#                     .outputMode("update").start("s3a://datalake/sliver/product_DF")
-
-# product_price.writeStream.format("delta").option("checkpointLocation", "s3a://datalake/sliver/checkpoint/product_price") \
-#                     .outputMode("append").start("s3a://datalake/sliver/product_price").awaitTermination()
