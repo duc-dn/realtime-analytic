@@ -1,5 +1,5 @@
 import logging, json
-import requests
+# import requests
 from datetime import date
 
 from delta.tables import *
@@ -39,7 +39,7 @@ class DeltaSink:
 
     def __init__(self) -> None:
         self.spark = (
-            SparkSession.builder.master("local[*]")
+            SparkSession.builder
             .config(
                 "spark.jars.packages",
                 "io.delta:delta-core_2.12:1.0.1,"

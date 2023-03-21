@@ -1,8 +1,6 @@
 import logging
 import os
 
-import coloredlogs
-
 LOGGING_LEVEL = os.getenv("LOGGING_LEVEL", "DEBUG")
 LEVEL = {
     "INFO": logging.INFO,

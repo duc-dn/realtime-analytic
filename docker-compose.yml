@@ -145,27 +145,27 @@ services:
     networks:
       - lakehouse
     
-  # spark-worker-a:
-  #   image: ducdn01/cluster-apache-spark:3.1.1
-  #   container_name: worker-a
-  #   ports:
-  #     - "9091:8080"
-  #     - "7000:7000"
-  #   depends_on:
-  #     - spark-master
-  #   environment:
-  #     - SPARK_MASTER=spark://spark-master:7077
-  #     - SPARK_WORKER_CORES=1
-  #     - SPARK_WORKER_MEMORY=1G
-  #     - SPARK_DRIVER_MEMORY=1G
-  #     - SPARK_EXECUTOR_MEMORY=1G
-  #     - SPARK_WORKLOAD=worker
-  #     - SPARK_LOCAL_IP=spark-worker-a
-  #   volumes:
-  #     - ./spark/workspace:/opt/workspace
-  #     - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
-  #   networks:
-  #     - lakehouse
+  spark-worker-a:
+    image: ducdn01/cluster-apache-spark:3.1.1
+    container_name: worker-a
+    ports:
+      - "9091:8080"
+      - "7000:7000"
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-a
+    volumes:
+      - ./spark/workspace:/opt/workspace
+      - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
+    networks:
+      - lakehouse
 
   minio:
     image: quay.io/minio/minio
@@ -222,13 +222,13 @@ services:
   #   networks:
   #     - lakehouse
 
-  superset:
-    image: amancevice/superset
-    restart: always
-    ports:
-      - "8088:8088"
-    networks:
-      - lakehouse
+  # superset:
+  #   image: amancevice/superset
+  #   restart: always
+  #   ports:
+  #     - "8088:8088"
+  #   networks:
+  #     - lakehouse
 
 volumes:
   postgres:

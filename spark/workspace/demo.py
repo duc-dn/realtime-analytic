@@ -1,8 +1,8 @@
 from confluent_kafka.schema_registry import SchemaRegistryClient
 import json
 
-sr = SchemaRegistryClient({"url": 'http://localhost:8081'})
-SCHEMA_REGISTRY_CLIENT = SchemaRegistryClient({"url": "http://localhost:8081"})
+sr = SchemaRegistryClient({"url": 'http://schema-registry:8081'})
+SCHEMA_REGISTRY_CLIENT = SchemaRegistryClient({"url": "http://schema-registry:8081"})
 
 def get_schema(schema_id):
     schema = sr.get_schema(schema_id=schema_id).schema_str
