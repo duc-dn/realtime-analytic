@@ -27,10 +27,10 @@ if __name__ == "__main__":
 
   while True:
     sql = "INSERT INTO orders (order_date, purchaser, quantity, product_id) VALUES (%s, %s, %s, %s)"
-    val = ("2022-02-14", random.randint(1001, 1004), random.randint(10, 50), random.randint(101, 109))
+    val = ("2022-02-14", random.randint(1001, 1004), random.randint(10, 50), random.randint(101, 202))
     mycursor.execute(sql, val)  
 
     conn.commit()
 
     print(val)
-    sleep(5)
+    sleep(1)
