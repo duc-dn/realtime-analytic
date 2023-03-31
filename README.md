@@ -15,5 +15,5 @@ docker cp ./spark/lib/. worker-a:/opt/spark/jars
 ```
 
 ```
-docker exec -it master spark-submit --master spark://master:7077 /opt/workspace/spark-demo.py
+docker exec -it master spark-submit --master spark://master:7077 /opt/workspace/main.py
 ```

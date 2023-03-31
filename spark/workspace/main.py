@@ -202,29 +202,12 @@ class DeltaSink:
                 topic
             ).load()
 
-            # df: DataFrame = (
-            #     df.withColumn("schema_id", conv(hex(substring("value", 2, 4)), 16, 10))
-            #     .withColumn("fixed_value", expr("substring(value, 6, length(value)-5)"))
-            #     .select(
-            #         "topic",
-            #         "schema_id",
-            #         "fixed_value",
-            #     )
-            # )
-
             df: DataFrame = (
-                df.withColumn("key_schema_id", conv(hex(substring("key", 2, 4)), 16, 10))
-                    .withColumn("key_binary", expr("substring(key, 6, length(value)-5)"))
-                    .withColumn("schema_id", conv(hex(substring("value", 2, 4)), 16, 10))
-                    .withColumn("fixed_value", expr("substring(value, 6, length(value)-5)"))
-                    .select(
+                df.withColumn("schema_id", conv(hex(substring("value", 2, 4)), 16, 10))
+                .withColumn("fixed_value", expr("substring(value, 6, length(value)-5)"))
+                .select(
                     "topic",
-                    "partition",
-                    "offset",
-                    "timestamp",
-                    "key_schema_id",
                     "schema_id",
-                    "key_binary",
                     "fixed_value",
                 )
             )

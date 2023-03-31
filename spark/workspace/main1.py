@@ -141,6 +141,7 @@ class DeltaSink:
                 .drop("rank")
                 .dropDuplicates([pk])
         )
+        
         df.show(truncate=True)
         delta_table = self.get_delta_table(topic)
         if delta_table:
