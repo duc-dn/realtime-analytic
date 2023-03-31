@@ -35,4 +35,4 @@ if __name__ == "__main__":
         conn.commit()
 
         print(val)
-        sleep(5)
+        sleep(1)
