@@ -1,8 +1,8 @@
-import logging
-import requests
-from datetime import date
+import logging, json
 
-from pyspark.sql.functions import col, from_json, conv, hex, expr, substring, avg, sum as _sum
+from delta.tables import *
+from pyspark.sql.window import Window
+from pyspark.sql.functions import col, from_json, conv, hex, expr, substring, avg, sum as _sum, rank, when
 from pyspark.sql import SparkSession
 from pyspark.sql.dataframe import DataFrame
 from pyspark.sql.types import StringType, DoubleType
@@ -12,11 +12,11 @@ from pyspark.sql.utils import AnalysisException
 
 from get_data.read_table_from_mysql import get_tables
 from util.logger import logger
+from util.get_schema import get_schema
 from util.save_data import (
     save_data_to_minio,
     save_to_database
 )
-from demo import get_schema
 
 from config import (
     MINIO_ACCESS_KEY,
@@ -26,7 +26,7 @@ from config import (
 )
 
 from data_config import (
-    UX_DATA_TOPICS
+    TABLE_MAPPINGS
 )
 
 
@@ -37,7 +37,7 @@ class DeltaSink:
 
     def __init__(self) -> None:
         self.spark = (
-            SparkSession.builder.master("local[1]")
+            SparkSession.builder
             .config(
                 "spark.jars.packages",
                 "io.delta:delta-core_2.12:1.0.1,"
@@ -46,8 +46,8 @@ class DeltaSink:
                 "org.apache.spark:spark-token-provider-kafka-0-10_2.12:3.1.1,"
                 "org.apache.commons:commons-pool2:2.6.2,"
                 "org.apache.spark:spark-avro_2.12:3.1.1,"
-                "org.apache.hadoop:hadoop-aws:3.2.0,"
-                "com.amazonaws:aws-java-sdk-bundle:1.11.375,"
+                "org.apache.hadoop:hadoop-aws:3.1.1,"
+                "com.amazonaws:aws-java-sdk:1.11.271,"
                 "mysql:mysql-connector-java:8.0.30,"
                 "org.postgresql:postgresql:42.5.0"
             )
@@ -56,6 +56,7 @@ class DeltaSink:
                 "spark.sql.catalog.spark_catalog",
                 "org.apache.spark.sql.delta.catalog.DeltaCatalog",
             )
+            .config("spark.sql.codegen.wholeStage", "false")
             .config("spark.hadoop.fs.s3a.impl",
                     "org.apache.hadoop.fs.s3a.S3AFileSystem")
             .config("spark.hadoop.fs.s3a.access.key", MINIO_ACCESS_KEY)
@@ -65,12 +66,27 @@ class DeltaSink:
             .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false")
             .config('spark.hadoop.fs.s3a.aws.credentials.provider',
                     'org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider')
-
+            .config("spark.sql.legacy.castComplexTypesToString.enabled",
+                        "false")
             .getOrCreate()
         )
 
-        self.topic_name = UX_DATA_TOPICS
+        self._spark_sc = self.spark.sparkContext
+        self._spark_sc.setLogLevel('ERROR')
+        self.delta_tbl_loc = "s3a://datalake/brozen/"
+        self.table_mappings = TABLE_MAPPINGS
         self.kafka_bootstrap_servers = KAFKA_BOOTSTRAP_SERVERS
+
+    def get_delta_table(self, table_name):
+        try:
+            table = DeltaTable.forPath(
+                self.spark, path=self.delta_tbl_loc + table_name
+            ).alias("target")
+            return table    
+        except Exception as e:
+            logger.error(e)
+            return False
+
 
     def foreach_batch_function_incremental(self, df: DataFrame, epoch_id: int) -> None:
         """
@@ -84,92 +100,65 @@ class DeltaSink:
         # get topic name
         topic = df.select("topic").first()[0]
 
-        # get schema id with each batch data
+        # get schema id compatible with each batch data
         schema_id = df.select("schema_id").first()[0]
 
         logger.info(f'Epoch_id: {epoch_id} of topic: {topic} is being ingested')
         schema = get_schema(schema_id=schema_id)
 
-
         # decode value from kafka
         df = df.select(
             from_avro(col("fixed_value"), schema).alias("parsed_value")
         )
-
-        df = df.select("parsed_value.after.*")
-        # df.show()
-
-        # df.show()
-        # df = df.select(
-        #         "parsed_value.*"
-        #     ) \
-        #     .select(
-        #         "before",
-        #         "after",
-        #         "op",
-        #         "ts_ms"
-        #     )
-
-        # df.show(truncate=False)
-        customer_table = get_tables(spark=self.spark, table="customers")
-        product_table = get_tables(spark=self.spark, table="products")
-
-        # customer_table.show()
-        # product_table.show()
-
-        joinDF = df.join(customer_table, customer_table.id == df.purchaser, "inner") \
-                    .join(product_table, product_table.id == df.product_id, "inner") \
-                    .selectExpr("order_number", "order_date as order_time", "email", "purchaser", 
-                                "name as product_name", "quantity", "weight as unit_price")
         
-        # joinDF.show()
-        logger.info("processing calDF")
-        calDF = joinDF.withColumn(
-  	    "total_price", joinDF.quantity * joinDF.unit_price)
+        # get primary key of delta table
+        pk = TABLE_MAPPINGS[topic]["pk"]
 
+        primary_keys_fulfill = [
+                    when(col("parsed_value.op") == "d", col(f"parsed_value.before.{pk}"))
+                        .otherwise(col(f"parsed_value.after.{pk}"))
+                        .alias(f"before_{pk}")
+                ]
 
-        # Nhóm email của người dùng với số tiền mà user này đã chi
-        logger.info("processing total_spend_DF")
-        total_spent_DF = calDF \
-        .groupBy("email") \
-        .agg(_sum("total_price")) 
-        
-        # total_spent_DF.show()
-
-        # Nhóm tên các sản phẩm theo tổng số lượng đã bán và tổng số tiền nhận được
-        logger.info("processing total_spend_DF")
-        product_DF = calDF \
-            .groupBy("product_name") \
-            .agg(
-                _sum("quantity").alias("products_selled"), 
-                _sum("total_price").alias("total_price")
-            )
-        
-        product_DF.show()
-
-
-
-        # Nhóm thời gian và tên sản phẩm theo trung bình đơn giá của sản phẩm
-        logger.info("processing producgt_DF")
-        product_price = calDF \
-            .groupBy("order_time","product_name") \
-            .agg(
-                avg("unit_price").alias("ave_unit_price")
-            )
-        # product_price.show()
-
-        save_data_to_minio(
-            product_DF, path=f"s3a://datalake/brozen",
-            partitionField='product_name'
+        # select necessary fields
+        df = df.select(
+            "parsed_value.op",
+            "parsed_value.ts_ms",
+            "parsed_value.after.*",
+            *primary_keys_fulfill
         )
 
-        save_to_database(
-            product_DF, table="ave_product",
-            username='postgres', password= 'postgres',
-            url='jdbc:postgresql://localhost:5432/dwh_streaming'
+        by_primary_key = Window.partitionBy(
+                pk
+            ).orderBy(col("ts_ms").desc())
+        
+        df = (
+            df.withColumn("rank", rank().over(by_primary_key))
+                .filter("rank=1")
+                .orderBy("ts_ms")
+                .drop("rank")
+                .dropDuplicates([pk])
         )
-
-        # joinDF.show()
+        
+        df.show(truncate=True)
+        delta_table = self.get_delta_table(topic)
+        if delta_table:
+            (
+                delta_table.alias("target")
+                    .merge(
+                        source=df.alias("source"), 
+                        condition=f"target.{pk} = source.before_{pk}"
+                    )
+                    .whenMatchedDelete(condition="source.op = 'd'")
+                    .whenMatchedUpdateAll(condition="source.op <> 'd'")
+                    .whenNotMatchedInsertAll(condition="source.op <> 'd'")
+                    .execute()
+            )
+        else:
+            df.where("op <> 'd'").write.format("delta").mode(
+                "overwrite"
+            ).save(f"s3a://datalake/brozen/{topic}")
+            logger.info("="*20 + f"SAVE {topic} SUCESSFULLY" + "="*20)
 
     def get_data_stream_reader(
             self, topic_name: str, starting_offsets: str = "earliest"
@@ -196,7 +185,7 @@ class DeltaSink:
         :return: None
         """
 
-        for topic in self.topic_name:
+        for topic in self.table_mappings.keys():
             logger.info(f"Starting ingest topic {topic}")
             df: DataFrame = self.get_data_stream_reader(
                 topic
@@ -216,14 +205,19 @@ class DeltaSink:
                 df.writeStream.foreachBatch(
                     self.foreach_batch_function_incremental
                 )
-                .trigger(processingTime="30 seconds")
+                .trigger(processingTime="60 seconds")
+                # .option("checkpointLocation", f"s3a://datalake/brozen/checkpoint/{topic}")
                 .start()
             )
         self.spark.streams.awaitAnyTermination()
 
+    def merge_to_delta(self, df, primary_keys):
+        pass
+
     def run(self) -> None:
         try:
             self.ingest_mutiple_topic()
+            logger.info("Table existed!!")
         except AnalysisException as e:
             logger.error(f'Error: {e}')
 
