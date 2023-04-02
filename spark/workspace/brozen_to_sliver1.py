@@ -12,6 +12,10 @@ from pyspark.sql.utils import AnalysisException
 
 from get_data.read_table_from_mysql import get_tables
 from util.logger import logger
+from util.save_data import (
+    save_data_to_minio,
+    save_to_database
+)
 
 from config import (
     MINIO_ACCESS_KEY,
@@ -78,14 +82,14 @@ class IngestionSliver:
                 )
         
         products = (
-                    self.spark.read.option("ignoreChanges", "true")
+                    self.spark.readStream.option("ignoreChanges", "true")
                     .format("delta")
                     .load("s3a://datalake/brozen/cdc.inventory.products")
                     .alias("products")
                 )
         
         customers = (
-                    self.spark.read.option("ignoreChanges", "true").
+                    self.spark.readStream.option("ignoreChanges", "true").
                     format("delta").load("s3a://datalake/brozen/cdc.inventory.customers")
                     .alias("customers")
                 )
@@ -95,17 +99,55 @@ class IngestionSliver:
                             .selectExpr("order_number", "order_date as order_time", "email", "purchaser", 
                                         "name as product_name", "quantity", "weight as unit_price", "orders.ts_ms as timestamp")
 
-        # joinDF.writeStream.format("console").start().awaitTermination()
+        calDF = joinDF.withColumn(
+  	    "total_price", joinDF.quantity * joinDF.unit_price)
 
-        # calDF = joinDF.withColumn(
-  	    # "total_price", joinDF.quantity * joinDF.unit_price)
-
-        joinDF.writeStream.format("delta") \
-            .option("checkpointLocation", "s3a://datalake/demo") \
+        calDF.writeStream.format("delta") \
+            .option("checkpointLocation", "s3a://datalake/sliver/aggreateTable/checkpoint") \
             .outputMode("append") \
-            .start("s3a://datalake/demo") \
+            .start("s3a://datalake/sliver/aggreateTable") \
             .awaitTermination() 
-    
-if __name__ == '__main__':
+
+    def process_delta_data(self, df, epoch_id):
+        df.show(truncate=False)
+        # Join bảng orders, products và users
+        # orders = self.spark.read.format("delta").load("s3a://datalake/brozen/cdc.inventory.orders")
+        products = self.spark.read.format("delta").load("s3a://datalake/brozen/cdc.inventory.products")
+        customers = self.spark.read.format("delta").load("s3a://datalake/brozen/cdc.inventory.customers")
+
+        joinDF = df.join(customers, customers.id == df.purchaser, "inner") \
+                            .join(products, products.id == df.product_id, "inner") \
+                            .selectExpr("order_number", "order_date as order_time", "email", "purchaser", 
+                                        "name as product_name", "quantity", "weight as unit_price")
+        
+        # Tính tổng giá trị đơn hàng (total_amount) của mỗi người dùng (user_id)
+        agg_df = joinDF \
+            .groupBy("email") \
+            .agg(_sum("quantity").alias("quantiy"))
+        
+        # Lưu kết quả vào Delta table gold tier
+        agg_df \
+            .write \
+            .format("delta") \
+            .mode("append") \
+            .option("mergeSchema", "true") \
+            .save("s3a://datalake/gold/agg")
+
+    def writeStream_to_minio(self):
+        delta_stream = self.spark \
+                        .readStream \
+                        .option("ignoreChanges", "true") \
+                        .format("delta") \
+                        .load("s3a://datalake/brozen/cdc.inventory.orders")
+        
+        query = delta_stream \
+                .writeStream \
+                .foreachBatch(self.process_delta_data) \
+                .option("checkpointLocation", "s3a://datalake/gold/agg") \
+                .start() 
+        
+        query.awaitTermination()
+
+if __name__ == "__main__":
     ingestion = IngestionSliver()
-    ingestion.processing_bronze_to_sliver()
+    ingestion.writeStream_to_minio()

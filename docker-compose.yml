@@ -174,8 +174,8 @@ services:
         - MINIO_ROOT_USER=admin
         - MINIO_ROOT_PASSWORD=123456789
     ports:
-        - "9001:9001"
         - "9000:9000"
+        - "9001:9001"
     # volumes:
     #     - ./minio/data:/data
     command: server /data --console-address ":9001" 

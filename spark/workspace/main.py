@@ -84,7 +84,7 @@ class DeltaSink:
             ).alias("target")
             return table    
         except Exception as e:
-            logger.error(e)
+            logger.warn(e)
             return False
 
 
