@@ -90,11 +90,11 @@ class DeltaSink:
 
     def foreach_batch_function_incremental(self, df: DataFrame, epoch_id: int) -> None:
         """
-            Handle each batch when ingesting incremental
+        Handle each batch when ingesting incremental
 
-            :param df:
-            :param epoch_id:
-            :return: None
+        :param df:
+        :param epoch_id:
+        :return: None
         """
 
         # get topic name
@@ -102,73 +102,120 @@ class DeltaSink:
 
         # get schema id compatible with each batch data
         schema_id = df.select("schema_id").first()[0]
-        schema = get_schema(schema_id=schema_id)
 
         logger.info(f'Epoch_id: {epoch_id} of topic: {topic} is being ingested')
+        schema = get_schema(schema_id=schema_id)
 
         # decode value from kafka
         df = df.select(
             from_avro(col("fixed_value"), schema).alias("parsed_value")
         )
 
-        if topic == "cdc.myshop.order_detail":
-            pk1 = TABLE_MAPPINGS[topic]['pk1']
-            pk2 = TABLE_MAPPINGS[topic]['pk2']
 
-            df, condition = self.processing_dataframe(df, pk=None, pk1=pk1, pk2=pk2)
+        if topic != "cdc.myshop.order_detail":
+            # get primary key of delta table
+            pk = TABLE_MAPPINGS[topic]["pk"]
+
+            primary_keys_fulfill = [
+                when(
+                    col("parsed_value.op") == "d", col(f"parsed_value.before.{pk}")
+                )
+                .otherwise(col(f"parsed_value.after.{pk}"))
+                .alias(f"before_{pk}")
+            ]
+            # select necessary fields
+            df = df.select(
+                "parsed_value.op",
+                "parsed_value.ts_ms",
+                "parsed_value.after.*",
+                *primary_keys_fulfill
+            )
+
+            by_primary_key = Window.partitionBy(
+                pk    
+            ).orderBy(col("ts_ms").desc())
+        
+            df = (
+                df.withColumn("rank", rank().over(by_primary_key))
+                    .filter("rank=1")
+                    .orderBy("ts_ms")
+                    .drop("rank")
+                    .dropDuplicates([pk])
+            )
         else:
-            pk = TABLE_MAPPINGS[topic]['pk']
-            df, condition = self.processing_dataframe(df, pk=pk, pk1=None, pk2=None)
+             # get primary key of delta table
+            pk1 = TABLE_MAPPINGS[topic]["pk1"]
+            pk2 = TABLE_MAPPINGS[topic]["pk2"]
+
+            primary_keys_fulfill1 = [
+                when(
+                    col("parsed_value.op") == "d", col(f"parsed_value.before.{pk1}")
+                )
+                .otherwise(col(f"parsed_value.after.{pk1}"))
+                .alias(f"before_{pk1}")
+            ]
+
+            primary_keys_fulfill2 = [
+                when(
+                    col("parsed_value.op") == "d", col(f"parsed_value.before.{pk2}")
+                )
+                .otherwise(col(f"parsed_value.after.{pk2}"))
+                .alias(f"before_{pk2}")
+            ]
+
+            df = df.select(
+                "parsed_value.op",
+                "parsed_value.ts_ms",
+                "parsed_value.after.*",
+                *primary_keys_fulfill1,
+                *primary_keys_fulfill2
+            )
 
         df.show(truncate=False)
-        
-        delta_table = self.get_delta_table(topic)
 
+        delta_table = self.get_delta_table(topic)
         if delta_table:
             if topic != "cdc.myshop.order_detail":
-
-                by_primary_key = (
-                    Window.partitionBy(
-                        pk    
-                    )
-                    .orderBy(col("ts_ms").desc())
+                pk = TABLE_MAPPINGS[topic]["pk"]
+                (
+                    delta_table.alias("target")
+                        .merge(
+                            source=df.alias("source"), 
+                            condition=f"target.{pk} = source.before_{pk}"
+                        )
+                        .whenMatchedDelete(condition="source.op = 'd'")
+                        .whenMatchedUpdateAll(condition="source.op <> 'd'")
+                        .whenNotMatchedInsertAll(condition="source.op <> 'd'")
+                        .execute()
                 )
-            
-                df = (
-                    df.withColumn("rank", rank().over(by_primary_key))
-                        .filter("rank=1")
-                        .orderBy("ts_ms")
-                        .drop("rank")
-                        .dropDuplicates([pk])
-                )
-                
-                self.merge_data_to_delta_table(df=df, delta_table=delta_table, condition=condition)
-
             else:
                 pk1 = TABLE_MAPPINGS[topic]["pk1"]
                 pk2 = TABLE_MAPPINGS[topic]["pk2"]
-
-                self.merge_data_to_delta_table(df=df, delta_table=delta_table, condition=condition)
-        else:
-            (
-                df.where("op <> 'd'")
-                .write.format("delta")
-                .mode(
-                    "overwrite"
+                (
+                    delta_table.alias("target")
+                        .merge(
+                            source=df.alias("source"), 
+                            condition=f"target.{pk1} = source.before_{pk1} and target.{pk2} = source.before_{pk2}"
+                        )
+                        .whenMatchedDelete(condition="source.op = 'd'")
+                        .whenMatchedUpdateAll(condition="source.op <> 'd'")
+                        .whenNotMatchedInsertAll(condition="source.op <> 'd'")
+                        .execute()
                 )
-                .save(f"s3a://datalake/brozen/{topic}")
-            )
-
+        else:
+            df.where("op <> 'd'").write.format("delta").mode(
+                "overwrite"
+            ).save(f"s3a://datalake/brozen/{topic}")
             logger.info("="*20 + f"SAVE {topic} SUCESSFULLY" + "="*20)
 
     def get_data_stream_reader(
         self, topic_name: str, starting_offsets: str = "earliest"
     ) -> DataStreamReader:
         """
-            Reading streaming from kafka topic
-            :param topic_name:
-            :param starting_offsets:
-            :return: stream DataFrame
+        Reading streaming from kafka topic
+        :param topic_name:
+        :param starting_offsets:
+        :return: stream DataFrame
         """
         kafka_bootstrap_servers = self.kafka_bootstrap_servers
 
@@ -182,8 +229,8 @@ class DeltaSink:
 
     def ingest_mutiple_topic(self) -> None:
         """
-            Ingest ux data from mutiple kafka topic
-            :return: None
+        Ingest ux data from mutiple kafka topic
+        :return: None
         """
 
         for topic in self.table_mappings.keys():
@@ -212,12 +259,7 @@ class DeltaSink:
             )
         self.spark.streams.awaitAnyTermination()
 
-    @staticmethod
-    def processing_dataframe(df: DataFrame, pk: str, pk1: str, pk2: str):
-        """ 
-            Processing dataframe
-        """
-
+    def merge_data_to_delta_table(df, delta_table, pk, pk1=None, pk2=None):
         if pk1 and pk2:
             primary_keys_fulfill1 = [
                 when(
@@ -274,27 +316,13 @@ class DeltaSink:
             
             condition = f"target.{pk} = source.before_{pk}"
 
-        return df, condition
-
-    @staticmethod
-    def merge_data_to_delta_table(
-        df: DataFrame, 
-        delta_table, 
-        condition: str
-    ):
-        """
-            merge into delta table when update, delete operation
-        """
-        
-        try:
-            delta_table.alias("target") \
+        delta_table.alias("target")\
             .merge(source=df.alias("source"), condition=condition)\
             .whenMatchedDelete(condition="source.op = 'd'")\
             .whenMatchedUpdateAll(condition="source.op <> 'd'")\
             .whenNotMatchedInsertAll(condition="source.op <> 'd'")\
             .execute()
-        except Exception as e:
-            logger.info(f"Error when merging into delta table {e}")
+
 
     def run(self) -> None:
         try:

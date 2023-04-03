@@ -3,7 +3,8 @@ TABLE_MAPPINGS = {
         "pk": "id"
     },
     "cdc.myshop.order_detail": {
-        "pk": "id"
+        "pk1": "order_id",
+        "pk2": "product_id"
     },
     "cdc.myshop.products": {
         "pk": "id"
@@ -25,5 +26,5 @@ UX_DATA_TOPICS = [
     "cdc.myshop.products",
     "cdc.myshop.users",
     "cdc.myshop.brands",
-    "cdc.myshop.categories",
+    "cdc.myshop.categories"
 ]
