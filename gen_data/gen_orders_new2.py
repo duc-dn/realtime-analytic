@@ -59,7 +59,6 @@ if __name__ == "__main__":
       product_id = random.randint(1, 800)
       quantity = random.randint(1, 6)
 
-      logger.info(20*'-' + "get price from products" + '-'*20)
       mycursor.execute(f"select price from products where id = {product_id}")
       price = mycursor.fetchone()[0]
       
