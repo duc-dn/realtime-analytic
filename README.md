@@ -2,10 +2,13 @@
 ---
 ```
 docker exec connect curl -X POST -H "Content-Type:application/json" -d @/connect/config.json http://localhost:8083/connectors
+docker exec connect curl -X POST -H "Content-Type:application/json" -d @/connect/config_connector_myshop.json http://localhost:8083/connectors
 ```
     
 ```
 docker exec connect curl -X DELETE http://localhost:8083/connectors/inventory-connector
+
+docker exec connect curl -X DELETE http://localhost:8083/connectors/myshop-connector
 ```
 
 ```

@@ -1,17 +1,29 @@
 TABLE_MAPPINGS = {
-    "cdc.inventory.orders": {
-        "pk": "order_number"
-    },
-    "cdc.inventory.products": {
+    "cdc.myshop.orders": {
         "pk": "id"
     },
-    "cdc.inventory.customers": {
+    "cdc.myshop.order_detail": {
+        "pk": "id"
+    },
+    "cdc.myshop.products": {
+        "pk": "id"
+    },
+    "cdc.myshop.users": {
+        "pk": "id"
+    },
+    "cdc.myshop.categories": {
+        "pk": "id"
+    },
+    "cdc.myshop.brands": {
         "pk": "id"
     }
 }
 
 UX_DATA_TOPICS = [
-    "cdc.inventory.orders", 
-    "cdc.inventory.products",
-    "cdc.inventory.customers"
+    "cdc.myshop.orders", 
+    "cdc.myshop.order_detail", 
+    "cdc.myshop.products",
+    "cdc.myshop.users",
+    "cdc.myshop.brands",
+    "cdc.myshop.categories",
 ]

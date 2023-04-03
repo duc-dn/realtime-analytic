@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   zookeeper:
@@ -85,6 +85,8 @@ services:
       - MYSQL_ROOT_PASSWORD=debezium
       - MYSQL_USER=mysqluser
       - MYSQL_PASSWORD=mysqlpw
+    volumes:
+      - ./mysql_data:/var/lib/mysql
     ports:
       - '3306:3306'
     networks:

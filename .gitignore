@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 *$py.class
 venv
+checkpoints/
+mysql_data/
