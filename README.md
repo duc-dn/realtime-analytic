@@ -42,9 +42,15 @@ trino://admin@trino:8080/delta
 #### Trino
 ---
 ```
-call system.register_table(schema_name => 'default', table_name => 'customers', table_location => 's3a://datalake/brozen/cdc.inventory.customers');
+call system.register_table(schema_name => 'default', table_name => 'users', table_location => 's3a://datalake/brozen/cdc.myshop.users');
 
-call system.register_table(schema_name => 'default', table_name => 'orders', table_location => 's3a://datalake/brozen/cdc.inventory.orders');
+call system.register_table(schema_name => 'default', table_name => 'brands', table_location => 's3a://datalake/brozen/cdc.myshop.brands');
 
-call system.register_table(schema_name => 'default', table_name => 'products', table_location => 's3a://datalake/brozen/cdc.inventory.products');
+call system.register_table(schema_name => 'default', table_name => 'products', table_location => 's3a://datalake/brozen/cdc.myshop.products');
+
+call system.register_table(schema_name => 'default', table_name => 'order_detail', table_location => 's3a://datalake/brozen/cdc.myshop.order_detail');
+
+call system.register_table(schema_name => 'default', table_name => 'orders', table_location => 's3a://datalake/brozen/cdc.myshop.orders');
+
+call system.register_table(schema_name => 'default', table_name => 'catagories', table_location => 's3a://datalake/brozen/cdc.myshop.categories');
 ```
