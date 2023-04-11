@@ -87,7 +87,6 @@ class DeltaSink:
             logger.warn(e)
             return False
 
-
     def foreach_batch_function_incremental(self, df: DataFrame, epoch_id: int) -> None:
         """
             Handle each batch when ingesting incremental

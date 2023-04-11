@@ -56,7 +56,7 @@ if __name__ == "__main__":
     order_details = []
     for i in range(0, order_number):
 
-      product_id = random.randint(1, 800)
+      product_id = random.randint(1, 781)
       quantity = random.randint(1, 6)
 
       mycursor.execute(f"select price from products where id = {product_id}")
