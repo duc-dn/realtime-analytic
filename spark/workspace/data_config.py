@@ -20,11 +20,14 @@ TABLE_MAPPINGS = {
     }
 }
 
-UX_DATA_TOPICS = [
-    "cdc.myshop.orders", 
-    "cdc.myshop.order_detail", 
-    "cdc.myshop.products",
-    "cdc.myshop.users",
-    "cdc.myshop.brands",
-    "cdc.myshop.categories"
-]
+# TABLE_MAPPINGS = {
+#     "cdc.inventory.customers": {
+#         "pk": "id"
+#     },
+#     "cdc.myshop.products": {
+#         "pk": "id"
+#     },
+#     "cdc.myshop.customers": {
+#         "pk": "id"
+#     },
+# }
