@@ -10,13 +10,8 @@ from pyspark.sql.avro.functions import from_avro
 from pyspark.sql.streaming import DataStreamReader, StreamingQuery
 from pyspark.sql.utils import AnalysisException
 
-from get_data.read_table_from_mysql import get_tables
 from util.logger import logger
 from util.get_schema import get_schema
-from util.save_data import (
-    save_data_to_minio,
-    save_to_database
-)
 
 from config import (
     MINIO_ACCESS_KEY,
@@ -84,7 +79,7 @@ class DeltaSink:
             ).alias("target")
             return table    
         except Exception as e:
-            logger.warn(e)
+            logger.warning(e)
             return False
 
     def foreach_batch_function_incremental(self, df: DataFrame, epoch_id: int) -> None:
@@ -119,7 +114,7 @@ class DeltaSink:
             pk = TABLE_MAPPINGS[topic]['pk']
             df, condition = self.processing_dataframe(df, pk=pk, pk1=None, pk2=None)
 
-        df.show(truncate=False)
+        df.show(n=5, truncate=False)
         
         delta_table = self.get_delta_table(topic)
 
@@ -212,7 +207,12 @@ class DeltaSink:
         self.spark.streams.awaitAnyTermination()
 
     @staticmethod
-    def processing_dataframe(df: DataFrame, pk: str, pk1: str, pk2: str):
+    def processing_dataframe(
+        df: DataFrame, 
+        pk: str, 
+        pk1: str, 
+        pk2: str
+    ):
         """ 
             Processing dataframe
         """

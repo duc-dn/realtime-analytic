@@ -136,10 +136,10 @@ services:
       - "9090:8080"
       - "7077:7077"
     volumes:
-       - ./spark/workspace:/opt/workspace
-       - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
+       - ./docker-config/spark/workspace:/opt/workspace
+       - ./docker-config/spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     env_file:
-      - ./spark/conf/spark-config.env
+      - ./docker-config/spark/conf/spark-config.env
     environment:
       - SPARK_LOCAL_IP=spark-master
       - SPARK_WORKLOAD=master
@@ -164,8 +164,8 @@ services:
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-a
     volumes:
-      - ./spark/workspace:/opt/workspace
-      - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
+      - ./docker-config/spark/workspace:/opt/workspace
+      - ./docker-config/spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     networks:
       - lakehouse
   
@@ -186,8 +186,8 @@ services:
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-b
     volumes:
-      - ./spark/workspace:/opt/workspace
-      - ./spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
+      - ./docker-config/spark/workspace:/opt/workspace
+      - ./docker-config/spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     networks:
       - lakehouse
 

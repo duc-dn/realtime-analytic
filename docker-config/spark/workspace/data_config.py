@@ -17,17 +17,11 @@ TABLE_MAPPINGS = {
     },
     "cdc.myshop.brands": {
         "pk": "id"
+    },
+    "cdc.myshop.inventory": {
+        "pk": "id"
+    },
+    "cdc.myshop.order_status": {
+        "pk": "id"
     }
 }
-
-# TABLE_MAPPINGS = {
-#     "cdc.inventory.customers": {
-#         "pk": "id"
-#     },
-#     "cdc.myshop.products": {
-#         "pk": "id"
-#     },
-#     "cdc.myshop.customers": {
-#         "pk": "id"
-#     },
-# }
