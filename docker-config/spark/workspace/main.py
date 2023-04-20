@@ -12,6 +12,7 @@ from pyspark.sql.utils import AnalysisException
 
 from util.logger import logger
 from util.get_schema import get_schema
+from util.convert_timestamp import convert_timestamp
 
 from config import (
     MINIO_ACCESS_KEY,
@@ -44,7 +45,6 @@ class DeltaSink:
                 "org.apache.hadoop:hadoop-aws:3.1.1,"
                 "com.amazonaws:aws-java-sdk:1.11.271,"
                 "mysql:mysql-connector-java:8.0.30,"
-                "org.postgresql:postgresql:42.5.0"
             )
             .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
             .config(
@@ -91,6 +91,9 @@ class DeltaSink:
             :return: None
         """
 
+        if df.count() == 0:
+            return
+        
         # get topic name
         topic = df.select("topic").first()[0]
 
@@ -114,10 +117,20 @@ class DeltaSink:
             pk = TABLE_MAPPINGS[topic]['pk']
             df, condition = self.processing_dataframe(df, pk=pk, pk1=None, pk2=None)
 
-        df.show(n=5, truncate=False)
         
-        delta_table = self.get_delta_table(topic)
+        is_tscol = False
+        if "created_at" in df.columns:
+            df = convert_timestamp(df, "created_at")
+            is_tscol = True
+        elif "updated_at" in df.columns:
+            df = convert_timestamp(df, "updated_at")
+            is_tscol = True
 
+        print(f'Processing {topic} ...')
+        df.show(n=2, truncate=False)
+
+        # ============ START PROCESSING DELTA TABLE =========
+        delta_table = self.get_delta_table(topic)
         if delta_table:
             if topic != "cdc.myshop.order_detail":
 
@@ -136,23 +149,22 @@ class DeltaSink:
                         .dropDuplicates([pk])
                 )
                 
-                self.merge_data_to_delta_table(df=df, delta_table=delta_table, condition=condition)
-
+                self.merge_data_to_delta_table(
+                    df=df, 
+                    delta_table=delta_table, 
+                    condition=condition
+                )
             else:
                 pk1 = TABLE_MAPPINGS[topic]["pk1"]
                 pk2 = TABLE_MAPPINGS[topic]["pk2"]
 
-                self.merge_data_to_delta_table(df=df, delta_table=delta_table, condition=condition)
-        else:
-            (
-                df.where("op <> 'd'")
-                .write.format("delta")
-                .mode(
-                    "overwrite"
+                self.merge_data_to_delta_table(
+                    df=df, 
+                    delta_table=delta_table, 
+                    condition=condition
                 )
-                .save(f"s3a://datalake/brozen/{topic}")
-            )
-
+        else:
+            self.save_to_minio(df, topic, is_tscol)
             logger.info("="*20 + f"SAVE {topic} SUCESSFULLY" + "="*20)
 
     def get_data_stream_reader(
@@ -201,7 +213,7 @@ class DeltaSink:
                     self.foreach_batch_function_incremental
                 )
                 .trigger(processingTime="60 seconds")
-                # .option("checkpointLocation", f"s3a://datalake/brozen/checkpoint/{topic}")
+                .option("checkpointLocation", f"s3a://datalake/brozen/checkpoint/{topic}")
                 .start()
             )
         self.spark.streams.awaitAnyTermination()
@@ -294,6 +306,28 @@ class DeltaSink:
             .execute()
         except Exception as e:
             logger.info(f"Error when merging into delta table {e}")
+
+    @staticmethod
+    def save_to_minio(df: DataFrame, topic: str, is_ts_col: bool):
+        if is_ts_col:
+            (
+                df.where("op <> 'd'")
+                .write.format("delta")
+                .partitionBy(["year", "month", "day"])
+                .mode(
+                    "overwrite"
+                )
+                .save(f"s3a://datalake/brozen/{topic}")
+            )
+        else:
+            (
+                df.where("op <> 'd'")
+                .write.format("delta")
+                .mode(
+                    "overwrite"
+                )
+                .save(f"s3a://datalake/brozen/{topic}")
+            )
 
     def run(self) -> None:
         try:

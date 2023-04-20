@@ -4,4 +4,4 @@ Faker
 requests
 confluent-kafka
 delta-spark==1.0.1
-coloredlogs
+pandas

@@ -6,7 +6,7 @@ def convert_timestamp(df, ts_field: str):
     df = df.withColumn(
         "timestamp",
         (
-            col(ts_field) / 1000
+            col(ts_field)
         ).cast("timestamp")
     )
 
@@ -16,6 +16,6 @@ def convert_timestamp(df, ts_field: str):
             .withColumn("month", month(df.timestamp))
             .withColumn("day", dayofmonth(df.timestamp))
         )
-    return df
+    return df.drop(col("timestamp"))
 
     
