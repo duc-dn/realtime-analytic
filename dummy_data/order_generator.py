@@ -1,7 +1,8 @@
-import mysql.connector
-import random
 import datetime
+import random
 from time import sleep
+
+import mysql.connector
 from faker import Faker
 from faker.providers import DynamicProvider
 from util.logger import logger
@@ -14,39 +15,34 @@ class OrderGenerator:
 
         # gen data payment_type_provider
         self.payment_type_provider = DynamicProvider(
-            provider_name="payment_type", 
-            elements=["instalment", "credit_card", "cash"]
+            provider_name="payment_type", elements=["instalment", "credit_card", "cash"]
         )
         self.fake = Faker()
         self.fake.add_provider(self.payment_type_provider)
 
-        self.cnxpool = mysql.connector.pooling.MySQLConnectionPool (
-            pool_name='mypool',
+        self.cnxpool = mysql.connector.pooling.MySQLConnectionPool(
+            pool_name="mypool",
             pool_size=5,
             pool_reset_session=True,
-            host='mysql',
-            user='root',
-            password='debezium',
-            database='myshop'
+            host="mysql",
+            user="root",
+            password="debezium",
+            database="myshop",
         )
-    
+
     def _get_connection(self):
         return self.cnxpool.get_connection()
-    
-    def insert_order_detail(
-        self, 
-        conn,
-        order_details
-    ):
+
+    def insert_order_detail(self, conn, order_details):
         try:
             cursor = conn.cursor()
             sql = """
                 INSERT INTO order_detail
                 (
-                    order_id, 
-                    product_id, 
-                    quantity, 
-                    item_price, 
+                    order_id,
+                    product_id,
+                    quantity,
+                    item_price,
                     created_at
                 )
                 VALUES (%s, %s, %s, %s, %s)
@@ -69,31 +65,30 @@ class OrderGenerator:
         conn.commit()
 
     def generate_order(self):
-        logger.info(20*'-' + "inserting to orders table" + '-'*20)
+        logger.info(20 * "-" + "inserting to orders table" + "-" * 20)
 
         with self._get_connection() as conn:
             cursor = conn.cursor()
-            time_order = (
-                int(self.local_time.timestamp()) 
-                - self.time_days * random.randint(0, 400)
-            )
+            time_order = int(
+                self.local_time.timestamp()
+            ) - self.time_days * random.randint(0, 400)
 
             # INSERT ORDER TABLE
             sql = """
-                INSERT INTO orders 
+                INSERT INTO orders
                 (
-                    user_id, 
-                    payment, 
-                    status_id, 
+                    user_id,
+                    payment,
+                    status_id,
                     created_at
-                ) 
+                )
                 value (%s, %s, %s, %s)
             """
             val = (
-                random.randint(0, 10000), 
-                self.fake.payment_type(), 
+                random.randint(0, 10000),
+                self.fake.payment_type(),
                 random.randint(1, 4),
-                time_order
+                time_order,
             )
             cursor.execute(sql, val)
             conn.commit()
@@ -103,9 +98,8 @@ class OrderGenerator:
             order_number = random.randint(1, 5)
             order_id = cursor.lastrowid
 
-            logger.info(20*'-' + "inserting to order_detail table" + '-'*20)
+            logger.info(20 * "-" + "inserting to order_detail table" + "-" * 20)
             logger.info(f"=============== order_id: {order_id} ==============")
-            
 
             order_details = []
             price_dict = {}
@@ -113,25 +107,30 @@ class OrderGenerator:
                 product_id = random.randint(1, 1000)
 
                 if product_id not in price_dict:
-                    cursor.execute(f"select price from products where id = {product_id}")
+                    cursor.execute(
+                        f"select price from products where id = {product_id}"
+                    )
                     price_dict[product_id] = cursor.fetchone()[0]
 
                 quantity = random.randint(1, 4)
                 price = price_dict[product_id]
                 item_price = price * quantity
 
-                order_details.append((order_id, product_id, quantity, item_price, time_order))
+                order_details.append(
+                    (order_id, product_id, quantity, item_price, time_order)
+                )
 
                 # update quantity of product in inventory table
                 self.update_inventory(conn, product_id, quantity)
 
             self.insert_order_detail(conn, order_details)
             print("insert order detail done ...")
-    
+
     def _run(self) -> None:
         while True:
             self.generate_order()
             sleep(10)
+
 
 if __name__ == "__main__":
     OrderGenerator()._run()

@@ -32,7 +32,7 @@ services:
       - zookeeper
     networks:
       - lakehouse
-  
+
   broker2:
     image: confluentinc/cp-kafka:6.0.0
     hostname: broker2
@@ -107,7 +107,7 @@ services:
       - 8085:8085
     networks:
       - lakehouse
-    
+
   akhq:
     image: tchiotludo/akhq
     container_name: akhq
@@ -133,7 +133,7 @@ services:
       # - connect
     networks:
       - lakehouse
-  
+
   mysql:
     image: debezium/example-mysql:1.7
     hostname: mysql
@@ -151,7 +151,7 @@ services:
       - '3306:3306'
     networks:
       - lakehouse
-  
+
   spark-master:
     image: cluster-spark:latest # docker build -t ducdn01/cluster-apache-spark:3.1.1./Dockerfiles/spark
     container_name: master
@@ -169,7 +169,7 @@ services:
       - PATH=/usr/local/openjdk-11/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/spark/bin:/opt/spark/sbin
     networks:
       - lakehouse
-    
+
   spark-worker-a:
     image: cluster-spark:latest
     container_name: worker-a
@@ -191,7 +191,7 @@ services:
       - ./docker-config/spark/conf/spark-defaults.conf:/opt/spark/conf/spark-defaults.conf
     networks:
       - lakehouse
-  
+
   spark-worker-b:
     image: cluster-spark:latest
     container_name: worker-b
@@ -225,7 +225,7 @@ services:
       - "9001:9001"
     # volumes:
     #     - ./minio/data:/data
-    command: server /data --console-address ":9001" 
+    command: server /data --console-address ":9001"
     healthcheck:
         test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
         interval: 30s
@@ -233,7 +233,7 @@ services:
         retries: 3
     networks:
       - lakehouse
-  
+
   trino-coordinator:
     image: 'trinodb/trino:latest'
     hostname: trino-coordinator
