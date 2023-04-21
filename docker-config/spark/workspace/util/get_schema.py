@@ -12,7 +12,7 @@ def get_schema(schema_id: str):
         schema compatible with id
     """
     try:
-        sr = SchemaRegistryClient({"url": 'http://schema-registry:8081'})
+        sr = SchemaRegistryClient({"url": "http://schema-registry:8081"})
         schema = sr.get_schema(schema_id=schema_id).schema_str
     except Exception as e:
         logger.error(f"Error: {e}")

@@ -1,7 +1,7 @@
 FROM ducdn/openjdk11-python as builder
 
 # Add Dependencies for PySpark
-RUN apt-get update && apt-get install -y ssh net-tools ca-certificates 
+RUN apt-get update && apt-get install -y ssh net-tools ca-certificates
 
 RUN update-alternatives --install "/usr/bin/python" "python" "$(which python3)" 1
 
