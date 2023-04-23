@@ -174,7 +174,7 @@ class DeltaSink:
 
     def ingest_mutiple_topic(self) -> None:
         """
-        Ingest ux data from mutiple kafka topic
+        Ingest data from mutiple kafka topic
         :return: None
         """
 
