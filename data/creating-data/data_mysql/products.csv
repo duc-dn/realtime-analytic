@@ -1,0 +1,1065 @@
+id,products_name,price,catagory_id,brand_id,created_at,description
+1,Samsung Galaxy S21 Ultra 5G smartphone,413,1,14,1672916367,designed by Samsung
+2,Samsung Galaxy S21+ 5G smartphone,520,1,14,1676545167,designed by Samsung
+3,Samsung Galaxy S21 5G smartphone,1961,1,14,1675162767,designed by Samsung
+4,Samsung Galaxy Note20 Ultra 5G smartphone,384,1,14,1680087567,designed by Samsung
+5,Samsung Galaxy Note20 5G smartphone,1363,1,14,1677409167,designed by Samsung
+6,Samsung Galaxy S20 Ultra 5G smartphone,472,1,14,1675076367,designed by Samsung
+7,Samsung Galaxy S20+ 5G smartphone,1298,1,14,1674817167,designed by Samsung
+8,Samsung Galaxy S20 5G smartphone,516,1,14,1673348367,designed by Samsung
+9,Samsung Galaxy A72 smartphone,1888,1,14,1681210767,designed by Samsung
+10,Samsung Galaxy A52 5G smartphone,902,1,14,1680605967,designed by Samsung
+11,Samsung Galaxy A51 5G smartphone,1205,1,14,1678791567,designed by Samsung
+12,Samsung Galaxy A32 5G smartphone,736,1,14,1673348367,designed by Samsung
+13,Samsung Galaxy A12 smartphone,1575,1,14,1678359567,designed by Samsung
+14,Samsung Galaxy A02s smartphone,824,1,14,1680173967,designed by Samsung
+15,Samsung Galaxy M62 smartphone,1697,1,14,1673607567,designed by Samsung
+16,Samsung Galaxy M51 smartphone,1975,1,14,1675681167,designed by Samsung
+17,Samsung Galaxy M31 smartphone,873,1,14,1673089167,designed by Samsung
+18,Samsung Galaxy M21 smartphone,1088,1,14,1675421967,designed by Samsung
+19,Samsung Galaxy Z Fold3 5G smartphone,704,1,14,1679828367,designed by Samsung
+20,Samsung Galaxy Z Flip3 5G smartphone,1446,1,14,1680865167,designed by Samsung
+21,Samsung Galaxy Z Fold2 5G smartphone,343,1,14,1680692367,designed by Samsung
+22,Samsung Galaxy Z Flip 5G smartphone,977,1,14,1674644367,designed by Samsung
+23,Samsung Galaxy A42 5G smartphone,1628,1,14,1678964367,designed by Samsung
+24,Samsung Galaxy A31 smartphone,370,1,14,1679828367,designed by Samsung
+25,Samsung Galaxy A21s smartphone,955,1,14,1675335567,designed by Samsung
+26,Samsung Galaxy A11 smartphone,847,1,14,1676890767,designed by Samsung
+27,Samsung Galaxy A10s smartphone,728,1,14,1681469967,designed by Samsung
+28,Samsung Galaxy Note10+ 5G smartphone,1362,1,14,1675767567,designed by Samsung
+29,Samsung Galaxy Note10 smartphone,1903,1,14,1676890767,designed by Samsung
+30,Samsung Galaxy S10 5G smartphone,1838,1,14,1679741967,designed by Samsung
+31,Samsung Galaxy S10+ smartphone,1455,1,14,1680865167,designed by Samsung
+32,Samsung Galaxy S10 smartphone,701,1,14,1672916367,designed by Samsung
+33,Samsung Galaxy S10e smartphone,740,1,14,1674125967,designed by Samsung
+34,Samsung Galaxy S9+ smartphone,1086,1,14,1678100367,designed by Samsung
+35,Samsung Galaxy S9 smartphone,1818,1,14,1680001167,designed by Samsung
+36,Samsung Galaxy J7 Pro smartphone,1799,1,14,1680519567,designed by Samsung
+37,Samsung Galaxy J6 smartphone,1627,1,14,1676199567,designed by Samsung
+38,Samsung Galaxy J5 smartphone,389,1,14,1679396367,designed by Samsung
+39,Samsung Galaxy J4+ smartphone,711,1,14,1679482767,designed by Samsung
+40,Samsung Galaxy J2 Core smartphone,854,1,14,1681383567,designed by Samsung
+41,Samsung Galaxy XCover 5 smartphone,1058,1,14,1675853967,designed by Samsung
+42,Samsung Galaxy XCover Pro smartphone,1936,1,14,1675249167,designed by Samsung
+43,Samsung Galaxy Tab S7+ 5G smartphone,1192,1,14,1676977167,designed by Samsung
+44,Samsung Galaxy Tab S7 smartphone,1031,1,14,1677841167,designed by Samsung
+45,Samsung Galaxy Tab S6 Lite smartphone,144,1,14,1677409167,designed by Samsung
+46,Samsung Galaxy Tab A7 smartphone,1639,1,14,1678100367,designed by Samsung
+47,Samsung Galaxy Watch4 smartphone,1993,1,14,1673780367,designed by Samsung
+48,Samsung Galaxy Watch3 smartphone,1546,1,14,1677409167,designed by Samsung
+49,Samsung Galaxy Watch Active2 smartphone,1795,1,14,1676717967,designed by Samsung
+50,Samsung Galaxy Fit2 smartphone,272,1,14,1680001167,designed by Samsung
+51,Samsung Galaxy A80 smartphone,827,1,14,1673261967,designed by Samsung
+52,Samsung Galaxy A70 smartphone,1776,1,14,1676717967,designed by Samsung
+53,Samsung Galaxy A50 smartphone,1563,1,14,1673693967,designed by Samsung
+54,Samsung Galaxy A40 smartphone,1753,1,14,1673261967,designed by Samsung
+55,Samsung Galaxy A30 smartphone,191,1,14,1674644367,designed by Samsung
+56,Samsung Galaxy A20e smartphone,1084,1,14,1679309967,designed by Samsung
+57,Samsung Galaxy A10 smartphone,460,1,14,1677581967,designed by Samsung
+58,Samsung Galaxy J8 smartphone,801,1,14,1678100367,designed by Samsung
+59,Samsung Galaxy J7 Duo smartphone,1136,1,14,1678532367,designed by Samsung
+60,Samsung Galaxy J6+ smartphone,1215,1,14,1679741967,designed by Samsung
+61,Samsung Galaxy J4 smartphone,142,1,14,1677841167,designed by Samsung
+62,Samsung Galaxy J3 smartphone,468,1,14,1679050767,designed by Samsung
+63,Samsung Galaxy J2 Pro smartphone,535,1,14,1681556367,designed by Samsung
+64,Samsung Galaxy J2 smartphone,633,1,14,1674903567,designed by Samsung
+65,Samsung Galaxy S8+ smartphone,1961,1,14,1677927567,designed by Samsung
+66,Samsung Galaxy S8 smartphone,1208,1,14,1672916367,designed by Samsung
+67,Samsung Galaxy S7 edge smartphone,1874,1,14,1675421967,designed by Samsung
+68,Samsung Galaxy S7 smartphone,879,1,14,1677236367,designed by Samsung
+69,Samsung Galaxy C7 Pro smartphone,1420,1,14,1676458767,designed by Samsung
+70,Samsung Galaxy C5 Pro smartphone,149,1,14,1680087567,designed by Samsung
+71,Samsung Galaxy On7 Prime smartphone,1659,1,14,1674557967,designed by Samsung
+72,Samsung Galaxy On Max smartphone,1731,1,14,1675335567,designed by Samsung
+73,Samsung Galaxy On Nxt smartphone,1119,1,14,1677063567,designed by Samsung
+74,Samsung Galaxy J7 Max smartphone,1739,1,14,1680433167,designed by Samsung
+75,Samsung Galaxy J7 Prime smartphone,1103,1,14,1679137167,designed by Samsung
+76,Samsung Galaxy J5 Prime smartphone,147,1,14,1674644367,designed by Samsung
+77,Samsung Galaxy J3 Pro smartphone,783,1,14,1679050767,designed by Samsung
+78,Samsung Galaxy J1 Ace Neo smartphone,1972,1,14,1674557967,designed by Samsung
+79,Samsung Galaxy J1 Mini Prime smartphone,194,1,14,1679482767,designed by Samsung
+80,Samsung Galaxy J2 Prime smartphone,1712,1,14,1681297167,designed by Samsung
+81,Samsung Galaxy C9 Pro smartphone,1398,1,14,1677754767,designed by Samsung
+82,Samsung Galaxy C7 smartphone,1093,1,14,1676890767,designed by Samsung
+83,Samsung Galaxy On8 smartphone,1733,1,14,1675853967,designed by Samsung
+84,Samsung Galaxy On7 smartphone,451,1,14,1677581967,designed by Samsung
+85,Samsung Galaxy On5 Pro smartphone,290,1,14,1679741967,designed by Samsung
+86,Samsung Galaxy J7 (2016) smartphone,1077,1,14,1679309967,designed by Samsung
+87,Samsung Galaxy J5 (2016) smartphone,1374,1,14,1676631567,designed by Samsung
+88,Samsung Galaxy J3 (2016) smartphone,305,1,14,1673261967,designed by Samsung
+89,Samsung Galaxy J2 (2016) smartphone,1707,1,14,1676631567,designed by Samsung
+90,Samsung Galaxy J smartphone,629,1,14,1677754767,designed by Samsung
+91,Samsung Galaxy A9 Pro smartphone,1798,1,14,1674644367,designed by Samsung
+92,Samsung Galaxy A9 smartphone,1805,1,14,1681297167,designed by Samsung
+93,Samsung Galaxy A8+ (2018) smartphone,1689,1,14,1676804367,designed by Samsung
+94,Samsung Galaxy A8 (2018) smartphone,351,1,14,1673175567,designed by Samsung
+95,Samsung Galaxy A7 (2018) smartphone,1151,1,14,1677927567,designed by Samsung
+96,Samsung Galaxy A7 (2017) smartphone,1319,1,14,1678791567,designed by Samsung
+97,Samsung Galaxy A5 (2017) smartphone,435,1,14,1677409167,designed by Samsung
+98,Samsung Galaxy A3 (2017) smartphone,1309,1,14,1675421967,designed by Samsung
+99,Samsung Galaxy C10 smartphone,483,1,14,1673089167,designed by Samsung
+100,Samsung Galaxy C5 smartphone,181,1,14,1681124367,designed by Samsung
+101,Samsung Galaxy J7 Prime 2 smartphone,1730,1,14,1676631567,designed by Samsung
+102,Samsung Galaxy J7 Pro smartphone,452,1,14,1678100367,designed by Samsung
+103,Samsung Galaxy J7 Nxt smartphone,1291,1,14,1674385167,designed by Samsung
+104,Samsung Galaxy J7 Core smartphone,1992,1,14,1680692367,designed by Samsung
+105,Samsung Galaxy J5 Pro smartphone,1212,1,14,1678100367,designed by Samsung
+106,Samsung Galaxy J5 Prime smartphone,1046,1,14,1674298767,designed by Samsung
+107,Samsung Galaxy J3 (2017) smartphone,978,1,14,1677149967,designed by Samsung
+108,Samsung Galaxy J2 Pro (2018) smartphone,929,1,14,1679396367,designed by Samsung
+109,Samsung Galaxy J2 (2017) smartphone,829,1,14,1679137167,designed by Samsung
+110,Samsung Galaxy J1 (2016) smartphone,1987,1,14,1678877967,designed by Samsung
+111,Samsung Galaxy J1 Mini smartphone,1425,1,14,1676026767,designed by Samsung
+112,Samsung Galaxy J1 Ace smartphone,1492,1,14,1675940367,designed by Samsung
+113,Samsung Galaxy J1 (2015) smartphone,1350,1,14,1677149967,designed by Samsung
+114,Samsung Galaxy Grand Prime Plus smartphone,664,1,14,1673780367,designed by Samsung
+115,Samsung Galaxy Grand Prime smartphone,464,1,14,1675594767,designed by Samsung
+116,Samsung Galaxy Grand Max smartphone,1811,1,14,1680605967,designed by Samsung
+117,Samsung Galaxy Grand Neo Plus smartphone,1394,1,14,1676545167,designed by Samsung
+118,Samsung Galaxy Grand Neo smartphone,636,1,14,1678964367,designed by Samsung
+119,Samsung Galaxy S Duos 3-VE smartphone,370,1,14,1680951567,designed by Samsung
+120,Samsung Galaxy S Duos 2 smartphone,1212,1,14,1681297167,designed by Samsung
+121,Samsung Galaxy S Duos smartphone,354,1,14,1673348367,designed by Samsung
+122,Samsung Galaxy S Advance smartphone,1845,1,14,1675940367,designed by Samsung
+123,Samsung Galaxy S5 LTE-A G906S smartphone,1561,1,14,1677236367,designed by Samsung
+124,Samsung Galaxy S5 LTE-A G901F smartphone,399,1,14,1679914767,designed by Samsung
+125,Samsung Galaxy S5 Active smartphone,1185,1,14,1675421967,designed by Samsung
+126,Samsung Galaxy S5 smartphone,579,1,14,1678013967,designed by Samsung
+127,Samsung Galaxy S4 Zoom smartphone,885,1,14,1674989967,designed by Samsung
+128,Samsung Galaxy S4 mini smartphone,1490,1,14,1678964367,designed by Samsung
+129,Samsung Galaxy S4 Active smartphone,927,1,14,1675853967,designed by Samsung
+130,Samsung Galaxy S4 smartphone,947,1,14,1679655567,designed by Samsung
+131,Samsung Galaxy S3 Neo smartphone,205,1,14,1678532367,designed by Samsung
+132,Samsung Galaxy S3 mini smartphone,447,1,14,1680433167,designed by Samsung
+133,Samsung Galaxy S3 smartphone,1081,1,14,1678877967,designed by Samsung
+134,Samsung Galaxy Ace 4 LTE smartphone,1561,1,14,1679741967,designed by Samsung
+135,Samsung Galaxy Ace 3 smartphone,187,1,14,1679223567,designed by Samsung
+136,Samsung Galaxy Ace 2 smartphone,1424,1,14,1680346767,designed by Samsung
+137,Samsung Galaxy Ace Plus smartphone,644,1,14,1674989967,designed by Samsung
+138,Samsung Galaxy Ace smartphone,1061,1,14,1679482767,designed by Samsung
+139,Samsung Galaxy Y Duos S6102 smartphone,1704,1,14,1678186767,designed by Samsung
+140,Samsung Galaxy Y Pro Duos B5512 smartphone,564,1,14,1678013967,designed by Samsung
+141,Samsung Galaxy Y smartphone,953,1,14,1673261967,designed by Samsung
+142,Samsung Galaxy Core Prime smartphone,1287,1,14,1676458767,designed by Samsung
+143,Samsung Galaxy Core 2 smartphone,1210,1,14,1676977167,designed by Samsung
+144,Samsung Galaxy Core Advance smartphone,1007,1,14,1679137167,designed by Samsung
+145,Samsung Galaxy Core smartphone,182,1,14,1675681167,designed by Samsung
+146,Samsung Galaxy Pocket 2 smartphone,1505,1,14,1673348367,designed by Samsung
+147,Samsung Galaxy Pocket Neo smartphone,997,1,14,1680433167,designed by Samsung
+148,Samsung Galaxy Pocket Plus smartphone,948,1,14,1674471567,designed by Samsung
+149,Samsung Galaxy Pocket smartphone,990,1,14,1680433167,designed by Samsung
+150,Samsung Galaxy Young 2 smartphone,125,1,14,1673693967,designed by Samsung
+151,Samsung Galaxy Young S6310 smartphone,1403,1,14,1676372367,designed by Samsung
+152,Samsung Galaxy Fame Lite S6790 smartphone,1038,1,14,1679914767,designed by Samsung
+153,Samsung Galaxy Fame S6810 smartphone,402,1,14,1681383567,designed by Samsung
+154,Samsung Galaxy Star 2 smartphone,351,1,14,1674039567,designed by Samsung
+155,Samsung Galaxy Star Pro smartphone,383,1,14,1676717967,designed by Samsung
+156,Samsung Galaxy Star smartphone,413,1,14,1678964367,designed by Samsung
+157,Samsung Galaxy Ace NXT smartphone,466,1,14,1673434767,designed by Samsung
+158,Samsung Galaxy Star Advance smartphone,139,1,14,1678013967,designed by Samsung
+159,Samsung Galaxy Trend Plus S7580 smartphone,1872,1,14,1675162767,designed by Samsung
+160,Samsung Galaxy Trend Lite S7390 smartphone,1412,1,14,1675421967,designed by Samsung
+161,Samsung Galaxy Trend Duos II S7572 smartphone,993,1,14,1678877967,designed by Samsung
+162,Samsung Galaxy Trend II Duos S7572 smartphone,105,1,14,1678445967,designed by Samsung
+163,Samsung Galaxy Trend II S7570 smartphone,1140,1,14,1678359567,designed by Samsung
+164,Samsung Galaxy Trend S7560 smartphone,187,1,14,1677581967,designed by Samsung
+165,Samsung Galaxy Young Duos S6312 smartphone,1190,1,14,1679741967,designed by Samsung
+166,Samsung Galaxy Chat B5330 smartphone,1787,1,14,1674039567,designed by Samsung
+167,Samsung Galaxy Pocket Duos S5302 smartphone,478,1,14,1680087567,designed by Samsung
+168,Samsung Galaxy Y Duos S6102B smartphone,607,1,14,1679396367,designed by Samsung
+169,Samsung Galaxy Y Pro Duos B5510 smartphone,1540,1,14,1672916367,designed by Samsung
+170,Samsung Galaxy Ace Duos S6802 smartphone,241,1,14,1674039567,designed by Samsung
+171,Samsung Galaxy Y Pro B5510 smartphone,1809,1,14,1675681167,designed by Samsung
+172,Samsung Galaxy Y TV S5367 smartphone,784,1,14,1680951567,designed by Samsung
+173,Samsung Galaxy Y CDMA I509 smartphone,1118,1,14,1675594767,designed by Samsung
+174,Samsung Galaxy Y Color Plus S5360 smartphone,376,1,14,1680519567,designed by Samsung
+175,Samsung Galaxy Y Plus S5303 smartphone,1519,1,14,1680605967,designed by Samsung
+176,Samsung Galaxy Y CDMA S5350 smartphone,1109,1,14,1677149967,designed by Samsung
+177,Samsung Galaxy Y Pop S smartphone,319,1,14,1673089167,designed by Samsung
+178,Samsung Galaxy Pocket Plus S5301 smartphone,1512,1,14,1681037967,designed by Samsung
+179,Samsung Galaxy Pocket Duos S5302B smartphone,1967,1,14,1681383567,designed by Samsung
+180,Samsung Galaxy Ace Plus S7500 smartphone,718,1,14,1677754767,designed by Samsung
+181,Samsung Galaxy Ace Duos I589 smartphone,691,1,14,1677495567,designed by Samsung
+182,Samsung Galaxy Ace S5830i smartphone,1587,1,14,1674644367,designed by Samsung
+183,Samsung Galaxy Mini 2 S6500 smartphone,1968,1,14,1676631567,designed by Samsung
+184,Samsung Galaxy Mini S5570 smartphone,610,1,14,1677236367,designed by Samsung
+185,Samsung Galaxy Y Duos S6102G smartphone,247,1,14,1675681167,designed by Samsung
+186,Samsung Galaxy Pro B7510 smartphone,267,1,14,1678705167,designed by Samsung
+187,Samsung Galaxy Gio S5660 smartphone,970,1,14,1677322767,designed by Samsung
+188,Samsung Galaxy Fit S5670 smartphone,682,1,14,1674471567,designed by Samsung
+189,Samsung Galaxy Ace NXT SM-G313H smartphone,1902,1,14,1672916367,designed by Samsung
+190,Samsung Galaxy Pocket Neo S5310 smartphone,610,1,14,1680173967,designed by Samsung
+191,Samsung Galaxy Star Trios S5283 smartphone,1785,1,14,1680087567,designed by Samsung
+192,Samsung Galaxy Ace 4 Neo G318H smartphone,1828,1,14,1675249167,designed by Samsung
+193,Samsung Galaxy Ace Style LTE G357FZ smartphone,984,1,14,1677754767,designed by Samsung
+194,Samsung Galaxy Ace Style G310HN smartphone,1117,1,14,1674903567,designed by Samsung
+195,Samsung Galaxy Ace 3 Duos S7272 smartphone,325,1,14,1675767567,designed by Samsung
+196,Samsung Galaxy Ace 3 LTE S7275 smartphone,420,1,14,1677841167,designed by Samsung
+197,Samsung Galaxy Ace 3 S7270 smartphone,299,1,14,1676113167,designed by Samsung
+198,Samsung Galaxy Core Mini 4G G3568V smartphone,456,1,14,1675508367,designed by Samsung
+199,Samsung Galaxy Core Mini LTE G3562 smartphone,924,1,14,1678532367,designed by Samsung
+200,Samsung Galaxy Core Advance I8580 smartphone,823,1,14,1676458767,designed by Samsung
+201,iPhone 13 Pro Max smartphone,194,1,1,1677322767,designed by iPhone
+202,iPhone 13 Pro smartphone,1572,1,1,1674730767,designed by iPhone
+203,iPhone 13 Mini smartphone,132,1,1,1675421967,designed by iPhone
+204,iPhone 13 smartphone,784,1,1,1681556367,designed by iPhone
+205,iPhone SE (2020) smartphone,935,1,1,1674212367,designed by iPhone
+206,iPhone 12 Pro Max smartphone,841,1,1,1676458767,designed by iPhone
+207,iPhone 12 Pro smartphone,542,1,1,1679050767,designed by iPhone
+208,iPhone 12 Mini smartphone,459,1,1,1673607567,designed by iPhone
+209,iPhone 12 smartphone,421,1,1,1679137167,designed by iPhone
+210,iPhone SE (2016) smartphone,1778,1,1,1680001167,designed by iPhone
+211,iPhone 11 Pro Max smartphone,102,1,1,1674039567,designed by iPhone
+212,iPhone 11 Pro smartphone,1466,1,1,1677668367,designed by iPhone
+213,iPhone 11 smartphone,1390,1,1,1673002767,designed by iPhone
+214,iPhone XS Max smartphone,939,1,1,1673607567,designed by iPhone
+215,iPhone XS smartphone,1293,1,1,1675249167,designed by iPhone
+216,iPhone XR smartphone,1036,1,1,1678273167,designed by iPhone
+217,iPhone X smartphone,1572,1,1,1675335567,designed by iPhone
+218,iPhone 8 Plus smartphone,1422,1,1,1674385167,designed by iPhone
+219,iPhone 8 smartphone,423,1,1,1674385167,designed by iPhone
+220,iPhone 7 Plus smartphone,1320,1,1,1678186767,designed by iPhone
+221,iPhone 7 smartphone,202,1,1,1679828367,designed by iPhone
+222,iPhone 6S Plus smartphone,836,1,1,1676545167,designed by iPhone
+223,iPhone 6S smartphone,432,1,1,1680865167,designed by iPhone
+224,iPhone 6 Plus smartphone,929,1,1,1673261967,designed by iPhone
+225,iPhone 6 smartphone,770,1,1,1678013967,designed by iPhone
+226,iPhone SE (2017) smartphone,1027,1,1,1675940367,designed by iPhone
+227,iPhone 5S smartphone,1675,1,1,1673953167,designed by iPhone
+228,iPhone 5C smartphone,1041,1,1,1678445967,designed by iPhone
+229,iPhone 5 smartphone,283,1,1,1677409167,designed by iPhone
+230,iPhone 4S smartphone,1597,1,1,1679309967,designed by iPhone
+231,iPhone 4 smartphone,1042,1,1,1674644367,designed by iPhone
+232,iPhone 3GS smartphone,1960,1,1,1676804367,designed by iPhone
+233,iPhone 3G smartphone,1351,1,1,1674730767,designed by iPhone
+234,Xiaomi Mi 12 smartphone,104,1,18,1679396367,designed by Xiaomi
+235,Xiaomi Mi 11 Ultra smartphone,1606,1,18,1676890767,designed by Xiaomi
+236,Xiaomi Mi 11 Pro smartphone,275,1,18,1677322767,designed by Xiaomi
+237,Xiaomi Mi 11 smartphone,1682,1,18,1673089167,designed by Xiaomi
+238,Xiaomi Mi 11 Lite smartphone,523,1,18,1673607567,designed by Xiaomi
+239,Xiaomi Mi 11 Lite 5G smartphone,1347,1,18,1680692367,designed by Xiaomi
+240,Xiaomi Mi 10 Ultra smartphone,1078,1,18,1675767567,designed by Xiaomi
+241,Xiaomi Mi 10 Pro smartphone,1057,1,18,1677841167,designed by Xiaomi
+242,Xiaomi Mi 10 smartphone,1069,1,18,1681037967,designed by Xiaomi
+243,Xiaomi Mi 10T Pro smartphone,1337,1,18,1680865167,designed by Xiaomi
+244,Xiaomi Mi 10T smartphone,559,1,18,1673434767,designed by Xiaomi
+245,Xiaomi Mi 9 Pro 5G smartphone,190,1,18,1680692367,designed by Xiaomi
+246,Xiaomi Mi 9 Explorer smartphone,734,1,18,1680346767,designed by Xiaomi
+247,Xiaomi Mi 9 smartphone,1179,1,18,1680605967,designed by Xiaomi
+248,Xiaomi Mi 9 SE smartphone,947,1,18,1680087567,designed by Xiaomi
+249,Xiaomi Mi 9T Pro smartphone,1189,1,18,1673866767,designed by Xiaomi
+250,Xiaomi Mi 9T smartphone,923,1,18,1676458767,designed by Xiaomi
+251,Xiaomi Mi 8 Lite smartphone,517,1,18,1678186767,designed by Xiaomi
+252,Xiaomi Mi 8 Pro smartphone,362,1,18,1680778767,designed by Xiaomi
+253,Xiaomi Mi 8 smartphone,191,1,18,1678964367,designed by Xiaomi
+254,Xiaomi Mi Mix 4 smartphone,1873,1,18,1680346767,designed by Xiaomi
+255,Xiaomi Mi Mix 3 smartphone,1436,1,18,1678705167,designed by Xiaomi
+256,Xiaomi Mi Mix 2S smartphone,1755,1,18,1679137167,designed by Xiaomi
+257,Xiaomi Mi Mix 2 smartphone,1477,1,18,1680260367,designed by Xiaomi
+258,Xiaomi Mi Mix smartphone,369,1,18,1680173967,designed by Xiaomi
+259,Xiaomi Mi Note 10 smartphone,1652,1,18,1675508367,designed by Xiaomi
+260,Xiaomi Mi Note 10 Pro smartphone,1582,1,18,1677322767,designed by Xiaomi
+261,Xiaomi Mi Note 10 Lite smartphone,1813,1,18,1674989967,designed by Xiaomi
+262,Xiaomi Redmi K50 Pro smartphone,1284,1,18,1679569167,designed by Xiaomi
+263,Xiaomi Redmi K50 smartphone,1749,1,18,1677581967,designed by Xiaomi
+264,Xiaomi Redmi K40 Pro+ smartphone,216,1,18,1678532367,designed by Xiaomi
+265,Xiaomi Redmi K40 Pro smartphone,1018,1,18,1675249167,designed by Xiaomi
+266,Xiaomi Redmi K40 smartphone,1367,1,18,1675421967,designed by Xiaomi
+267,Xiaomi Redmi Note 11 Pro smartphone,1584,1,18,1674903567,designed by Xiaomi
+268,Xiaomi Redmi Note 11S smartphone,294,1,18,1676372367,designed by Xiaomi
+269,Xiaomi Redmi Note 11 smartphone,964,1,18,1676458767,designed by Xiaomi
+270,Xiaomi Redmi Note 10 Pro smartphone,1278,1,18,1678791567,designed by Xiaomi
+271,Xiaomi Redmi Note 10S smartphone,512,1,18,1679309967,designed by Xiaomi
+272,Xiaomi Redmi Note 10 5G smartphone,303,1,18,1677841167,designed by Xiaomi
+273,Xiaomi Redmi Note 10 smartphone,340,1,18,1674730767,designed by Xiaomi
+274,Xiaomi Redmi 10 Prime smartphone,582,1,18,1675508367,designed by Xiaomi
+275,Xiaomi Redmi 10 smartphone,1076,1,18,1680001167,designed by Xiaomi
+276,Xiaomi Redmi 9T smartphone,235,1,18,1677754767,designed by Xiaomi
+277,Xiaomi Redmi 9 Power smartphone,1706,1,18,1674471567,designed by Xiaomi
+278,Xiaomi Redmi 9 smartphone,212,1,18,1673434767,designed by Xiaomi
+279,Xiaomi Redmi 8A smartphone,222,1,18,1680001167,designed by Xiaomi
+280,Xiaomi Redmi 8 smartphone,1163,1,18,1675940367,designed by Xiaomi
+281,Xiaomi Redmi 7A smartphone,1510,1,18,1676199567,designed by Xiaomi
+282,Xiaomi Redmi 7 smartphone,1174,1,18,1676977167,designed by Xiaomi
+283,Xiaomi Redmi 6A smartphone,1061,1,18,1673002767,designed by Xiaomi
+284,Xiaomi Redmi 6 Pro smartphone,1667,1,18,1673693967,designed by Xiaomi
+285,Xiaomi Redmi 6 smartphone,1646,1,18,1675853967,designed by Xiaomi
+286,Xiaomi Redmi 5A smartphone,1223,1,18,1681037967,designed by Xiaomi
+287,Xiaomi Redmi 5 Plus smartphone,725,1,18,1678791567,designed by Xiaomi
+288,Xiaomi Redmi 5 smartphone,1729,1,18,1673348367,designed by Xiaomi
+289,Xiaomi Redmi 4X smartphone,757,1,18,1675249167,designed by Xiaomi
+290,Xiaomi Redmi 4A smartphone,1408,1,18,1679137167,designed by Xiaomi
+291,Xiaomi Redmi 4 smartphone,1697,1,18,1681383567,designed by Xiaomi
+292,Xiaomi Redmi 3S Prime smartphone,1036,1,18,1681297167,designed by Xiaomi
+293,Xiaomi Redmi 3S smartphone,1406,1,18,1678273167,designed by Xiaomi
+294,Xiaomi Redmi 3 Pro smartphone,1068,1,18,1674730767,designed by Xiaomi
+295,Xiaomi Redmi 3 smartphone,488,1,18,1677322767,designed by Xiaomi
+296,Xiaomi Redmi 2 Pro smartphone,1980,1,18,1673175567,designed by Xiaomi
+297,Xiaomi Redmi 2A smartphone,1421,1,18,1674817167,designed by Xiaomi
+298,Xiaomi Redmi 2 smartphone,521,1,18,1676285967,designed by Xiaomi
+299,Xiaomi Poco X4 Pro smartphone,1556,1,18,1675249167,designed by Xiaomi
+300,Xiaomi Poco X4 smartphone,1841,1,18,1677927567,designed by Xiaomi
+301,Xiaomi Poco F3 GT smartphone,205,1,18,1678100367,designed by Xiaomi
+302,Xiaomi Poco F3 smartphone,582,1,18,1679482767,designed by Xiaomi
+303,Xiaomi Poco X3 Pro smartphone,733,1,18,1675421967,designed by Xiaomi
+304,Xiaomi Poco X3 NFC smartphone,218,1,18,1676199567,designed by Xiaomi
+305,Xiaomi Poco M3 Pro smartphone,444,1,18,1674644367,designed by Xiaomi
+306,Xiaomi Poco M3 smartphone,1541,1,18,1681210767,designed by Xiaomi
+307,Xiaomi Black Shark 4S smartphone,182,1,18,1678273167,designed by Xiaomi
+308,Xiaomi Black Shark 4 smartphone,420,1,18,1677322767,designed by Xiaomi
+309,Xiaomi Black Shark 3S smartphone,1903,1,18,1679569167,designed by Xiaomi
+310,Xiaomi Black Shark 3 Pro smartphone,1164,1,18,1678273167,designed by Xiaomi
+311,Xiaomi Black Shark 3 smartphone,1655,1,18,1681210767,designed by Xiaomi
+312,Xiaomi Black Shark 2 Pro smartphone,1036,1,18,1673607567,designed by Xiaomi
+313,Xiaomi Black Shark 2 smartphone,624,1,18,1676026767,designed by Xiaomi
+314,Xiaomi Mi CC9 Pro smartphone,297,1,18,1676631567,designed by Xiaomi
+315,Xiaomi Mi CC9 smartphone,1354,1,18,1677149967,designed by Xiaomi
+316,Xiaomi Mi CC9e smartphone,841,1,18,1679914767,designed by Xiaomi
+317,Xiaomi Mi A3 smartphone,1552,1,18,1673521167,designed by Xiaomi
+318,Xiaomi Mi A2 smartphone,378,1,18,1676113167,designed by Xiaomi
+319,Xiaomi Mi A2 Lite smartphone,754,1,18,1676372367,designed by Xiaomi
+320,Xiaomi Mi A1 smartphone,276,1,18,1681297167,designed by Xiaomi
+321,Xiaomi Mi Max 3 smartphone,854,1,18,1673693967,designed by Xiaomi
+322,Xiaomi Mi Max 2 smartphone,1832,1,18,1678964367,designed by Xiaomi
+323,Xiaomi Mi Max smartphone,253,1,18,1675594767,designed by Xiaomi
+324,Xiaomi Mi Play smartphone,244,1,18,1676890767,designed by Xiaomi
+325,HTC U20 5G smartphone,1438,1,5,1679482767,designed by HTC
+326,HTC Desire 20 Pro smartphone,189,1,5,1673002767,designed by HTC
+327,HTC Wildfire E3 smartphone,893,1,5,1675940367,designed by HTC
+328,HTC Desire 21 Pro 5G smartphone,1003,1,5,1678186767,designed by HTC
+329,HTC Wildfire X smartphone,155,1,5,1674989967,designed by HTC
+330,HTC Exodus 1 smartphone,522,1,5,1675853967,designed by HTC
+331,HTC U12+ smartphone,1380,1,5,1674298767,designed by HTC
+332,HTC U11 smartphone,161,1,5,1675162767,designed by HTC
+333,HTC U11+ smartphone,226,1,5,1674385167,designed by HTC
+334,HTC U Ultra smartphone,221,1,5,1677236367,designed by HTC
+335,HTC U Play smartphone,606,1,5,1680260367,designed by HTC
+336,HTC Desire 12s smartphone,502,1,5,1680173967,designed by HTC
+337,HTC Desire 19s smartphone,1619,1,5,1680433167,designed by HTC
+338,HTC U12 Life smartphone,285,1,5,1673866767,designed by HTC
+339,HTC Desire 12+ smartphone,1249,1,5,1681297167,designed by HTC
+340,HTC Desire 12 smartphone,358,1,5,1675594767,designed by HTC
+341,HTC Desire 19+ smartphone,172,1,5,1677841167,designed by HTC
+342,HTC Desire 650 smartphone,870,1,5,1681210767,designed by HTC
+343,HTC Desire 530 smartphone,929,1,5,1676890767,designed by HTC
+344,HTC One A9s smartphone,1172,1,5,1675508367,designed by HTC
+345,HTC One A9 smartphone,1214,1,5,1677754767,designed by HTC
+346,HTC One M9+ smartphone,661,1,5,1679482767,designed by HTC
+347,HTC One M9 smartphone,1465,1,5,1676113167,designed by HTC
+348,HTC One M8s smartphone,1105,1,5,1679569167,designed by HTC
+349,HTC One E9+ smartphone,891,1,5,1677495567,designed by HTC
+350,HTC One E9 smartphone,1818,1,5,1681556367,designed by HTC
+351,HTC One E8 smartphone,458,1,5,1675853967,designed by HTC
+352,HTC One Remix smartphone,1959,1,5,1681297167,designed by HTC
+353,HTC One Mini 2 smartphone,456,1,5,1679050767,designed by HTC
+354,HTC One Max smartphone,913,1,5,1678618767,designed by HTC
+355,HTC One Mini smartphone,1177,1,5,1674385167,designed by HTC
+356,HTC Butterfly 2 smartphone,1043,1,5,1681297167,designed by HTC
+357,HTC Butterfly S smartphone,439,1,5,1680173967,designed by HTC
+358,HTC Desire 820s smartphone,1706,1,5,1680173967,designed by HTC
+359,HTC Desire Eye smartphone,324,1,5,1677927567,designed by HTC
+360,HTC Desire 816 smartphone,1303,1,5,1674298767,designed by HTC
+361,HTC Desire 610 smartphone,1743,1,5,1677149967,designed by HTC
+362,HTC Desire 601 smartphone,652,1,5,1675940367,designed by HTC
+363,HTC Desire 600 smartphone,829,1,5,1674385167,designed by HTC
+364,HTC Desire 500 smartphone,931,1,5,1681383567,designed by HTC
+365,HTC Desire 310 smartphone,822,1,5,1676631567,designed by HTC
+366,HTC Desire 300 smartphone,1045,1,5,1678013967,designed by HTC
+367,HTC One SV smartphone,732,1,5,1674903567,designed by HTC
+368,HTC One VX smartphone,767,1,5,1681297167,designed by HTC
+369,HTC One X+ smartphone,1034,1,5,1679569167,designed by HTC
+370,HTC One X smartphone,780,1,5,1678877967,designed by HTC
+371,HTC One S smartphone,1381,1,5,1674989967,designed by HTC
+372,HTC One V smartphone,276,1,5,1680087567,designed by HTC
+373,HTC Sensation XE smartphone,827,1,5,1681469967,designed by HTC
+374,HTC Sensation XL smartphone,832,1,5,1674385167,designed by HTC
+375,LG Velvet smartphone,785,1,8,1676285967,designed by LG
+376,LG V60 ThinQ 5G smartphone,227,1,8,1674903567,designed by LG
+377,LG G8X ThinQ Dual Screen smartphone,1567,1,8,1676631567,designed by LG
+378,LG G8 ThinQ smartphone,1026,1,8,1680605967,designed by LG
+379,LG V50 ThinQ 5G smartphone,1332,1,8,1677322767,designed by LG
+380,LG Q70 smartphone,189,1,8,1681210767,designed by LG
+381,LG Stylo 5 smartphone,1277,1,8,1674903567,designed by LG
+382,LG K40 smartphone,706,1,8,1677149967,designed by LG
+383,LG V40 ThinQ smartphone,676,1,8,1677841167,designed by LG
+384,LG G7 ThinQ smartphone,1546,1,8,1674385167,designed by LG
+385,LG Q7 Plus smartphone,325,1,8,1674557967,designed by LG
+386,LG Q7 Alpha smartphone,690,1,8,1674212367,designed by LG
+387,LG Stylo 4 Plus smartphone,1005,1,8,1676804367,designed by LG
+388,LG V35 ThinQ smartphone,1121,1,8,1677841167,designed by LG
+389,LG G6 smartphone,1480,1,8,1673521167,designed by LG
+390,LG X Charge smartphone,1195,1,8,1677322767,designed by LG
+391,LG X Venture smartphone,838,1,8,1673434767,designed by LG
+392,LG Harmony smartphone,1858,1,8,1675076367,designed by LG
+393,LG V30+ smartphone,893,1,8,1674298767,designed by LG
+394,LG Q6 smartphone,1318,1,8,1678273167,designed by LG
+395,LG Stylo 3 Plus smartphone,923,1,8,1674903567,designed by LG
+396,LG G5 smartphone,1463,1,8,1677063567,designed by LG
+397,LG K20 Plus smartphone,1044,1,8,1675940367,designed by LG
+398,LG V20 smartphone,1208,1,8,1675767567,designed by LG
+399,LG Stylo 2 Plus smartphone,262,1,8,1675940367,designed by LG
+400,LG X Power smartphone,1523,1,8,1680346767,designed by LG
+401,LG K10 smartphone,1260,1,8,1680260367,designed by LG
+402,LG G4 smartphone,732,1,8,1673175567,designed by LG
+403,LG V10 smartphone,325,1,8,1675940367,designed by LG
+404,LG G Flex 2 smartphone,625,1,8,1676285967,designed by LG
+405,LG G3 smartphone,367,1,8,1677841167,designed by LG
+406,LG Volt smartphone,581,1,8,1679050767,designed by LG
+407,LG Leon smartphone,1829,1,8,1678877967,designed by LG
+408,LG Tribute smartphone,1059,1,8,1679137167,designed by LG
+409,LG Spirit smartphone,1887,1,8,1677322767,designed by LG
+410,LG G Stylo smartphone,1341,1,8,1676026767,designed by LG
+411,LG Magna smartphone,1624,1,8,1673261967,designed by LG
+412,LG Joy smartphone,816,1,8,1675681167,designed by LG
+413,LG L90 smartphone,1283,1,8,1680087567,designed by LG
+414,LG L70 smartphone,1894,1,8,1676199567,designed by LG
+415,LG Optimus G Pro smartphone,1568,1,8,1681210767,designed by LG
+416,LG Optimus L9 II smartphone,1042,1,8,1680346767,designed by LG
+417,LG Optimus G smartphone,107,1,8,1673089167,designed by LG
+418,LG Optimus L7 II smartphone,1400,1,8,1674385167,designed by LG
+419,LG Optimus L5 II smartphone,273,1,8,1678877967,designed by LG
+420,LG Optimus L3 II smartphone,1410,1,8,1677236367,designed by LG
+421,LG Optimus L4 II smartphone,612,1,8,1680346767,designed by LG
+422,LG Optimus L1 II smartphone,1145,1,8,1675594767,designed by LG
+423,LG Nexus 5X smartphone,357,1,8,1676199567,designed by LG
+424,LG Nexus 4 smartphone,1727,1,8,1679309967,designed by LG
+425,Realme 8s 5G smartphone,1896,1,13,1679914767,designed by Realme
+426,Realme 8i smartphone,1317,1,13,1678791567,designed by Realme
+427,Realme GT Neo2 smartphone,727,1,13,1677236367,designed by Realme
+428,Realme X7 Max 5G smartphone,1689,1,13,1673693967,designed by Realme
+429,Realme Narzo 50A smartphone,1893,1,13,1676804367,designed by Realme
+430,Realme Narzo 50i smartphone,1746,1,13,1679655567,designed by Realme
+431,Realme Narzo 50 Pro 5G smartphone,164,1,13,1674730767,designed by Realme
+432,Realme 9i smartphone,1454,1,13,1675594767,designed by Realme
+433,Realme C21Y smartphone,851,1,13,1680692367,designed by Realme
+434,Realme C25Y smartphone,1779,1,13,1681037967,designed by Realme
+435,Realme C25s smartphone,841,1,13,1676804367,designed by Realme
+436,Realme C25 smartphone,1639,1,13,1674385167,designed by Realme
+437,Realme C21 smartphone,1577,1,13,1680260367,designed by Realme
+438,Realme C11 2021 smartphone,642,1,13,1679137167,designed by Realme
+439,Realme C11 (2020) smartphone,1582,1,13,1674644367,designed by Realme
+440,Realme C2 smartphone,1194,1,13,1679569167,designed by Realme
+441,Realme 9 Pro 5G smartphone,618,1,13,1674039567,designed by Realme
+442,Realme GT 5G smartphone,1449,1,13,1675249167,designed by Realme
+443,Realme X7 Pro 5G smartphone,1930,1,13,1675767567,designed by Realme
+444,Realme X7 5G smartphone,480,1,13,1679309967,designed by Realme
+445,Realme V15 5G smartphone,873,1,13,1681124367,designed by Realme
+446,Realme Narzo 30 Pro 5G smartphone,992,1,13,1677927567,designed by Realme
+447,Realme Narzo 30A smartphone,862,1,13,1674385167,designed by Realme
+448,Realme Narzo 30 smartphone,1891,1,13,1676977167,designed by Realme
+449,Realme 8 Pro smartphone,1116,1,13,1672916367,designed by Realme
+450,Realme 8 smartphone,1340,1,13,1678445967,designed by Realme
+451,Realme Narzo 20A smartphone,1745,1,13,1680087567,designed by Realme
+452,Realme Narzo 20 Pro smartphone,1628,1,13,1675421967,designed by Realme
+453,Realme Narzo 20 smartphone,1606,1,13,1678877967,designed by Realme
+454,Realme 7 Pro smartphone,1227,1,13,1677927567,designed by Realme
+455,Realme 7 smartphone,1997,1,13,1677927567,designed by Realme
+456,Realme 6 Pro smartphone,506,1,13,1674989967,designed by Realme
+457,Realme 6i smartphone,996,1,13,1673953167,designed by Realme
+458,Realme 6 smartphone,1095,1,13,1677581967,designed by Realme
+459,Realme 5 Pro smartphone,378,1,13,1681556367,designed by Realme
+460,Realme 5s smartphone,622,1,13,1676890767,designed by Realme
+461,Realme 5 smartphone,1038,1,13,1679223567,designed by Realme
+462,Realme XT smartphone,1541,1,13,1674471567,designed by Realme
+463,Realme X smartphone,1672,1,13,1675681167,designed by Realme
+464,Realme X3 SuperZoom smartphone,216,1,13,1680001167,designed by Realme
+465,Realme X3 smartphone,535,1,13,1681037967,designed by Realme
+466,Realme X2 Pro smartphone,1149,1,13,1673348367,designed by Realme
+467,Realme X2 smartphone,1739,1,13,1679050767,designed by Realme
+468,Realme V11 5G smartphone,1330,1,13,1673002767,designed by Realme
+469,Realme V5 5G smartphone,1100,1,13,1679050767,designed by Realme
+470,Realme Q3 Pro smartphone,177,1,13,1679828367,designed by Realme
+471,Realme Q3i smartphone,1360,1,13,1677236367,designed by Realme
+472,Realme Q3 smartphone,1900,1,13,1678964367,designed by Realme
+473,Realme Narzo 10A smartphone,918,1,13,1678186767,designed by Realme
+474,Realme Narzo 10 smartphone,505,1,13,1675162767,designed by Realme
+475,Realme 3 Pro smartphone,1060,1,13,1681037967,designed by Realme
+476,Realme 3i smartphone,1321,1,13,1680865167,designed by Realme
+477,Realme 3 smartphone,1283,1,13,1675767567,designed by Realme
+478,Realme 2 Pro smartphone,1999,1,13,1673261967,designed by Realme
+479,Realme 2 smartphone,1210,1,13,1675508367,designed by Realme
+480,Realme U1 smartphone,799,1,13,1674298767,designed by Realme
+481,Realme C15 smartphone,1367,1,13,1680778767,designed by Realme
+482,Realme C12 smartphone,513,1,13,1673607567,designed by Realme
+483,Realme C11 smartphone,1148,1,13,1674903567,designed by Realme
+484,Realme C3i smartphone,1449,1,13,1679309967,designed by Realme
+485,Realme C3 smartphone,1638,1,13,1678532367,designed by Realme
+486,Realme C2s smartphone,904,1,13,1675421967,designed by Realme
+487,Realme C2i smartphone,517,1,13,1679741967,designed by Realme
+488,Realme C2 smartphone,1042,1,13,1676717967,designed by Realme
+489,Realme GT Master Edition smartphone,952,1,13,1681210767,designed by Realme
+490,Realme GT Explorer Master Edition smartphone,1068,1,13,1673693967,designed by Realme
+491,Realme V13 5G smartphone,1949,1,13,1677927567,designed by Realme
+492,Realme V9 5G smartphone,928,1,13,1679655567,designed by Realme
+493,Realme V7 Max 5G smartphone,595,1,13,1677581967,designed by Realme
+494,Realme V7 5G smartphone,1204,1,13,1681556367,designed by Realme
+495,Realme Narzo 50 smartphone,750,1,13,1680865167,designed by Realme
+496,Realme GT Neo Flash Edition smartphone,1334,1,13,1678791567,designed by Realme
+497,Realme GT Neo smartphone,566,1,13,1673693967,designed by Realme
+498,Realme Narzo 40 smartphone,759,1,13,1679741967,designed by Realme
+499,Realme 8 5G smartphone,713,1,13,1675681167,designed by Realme
+500,Realme GT Explorer Master Edition smartphone,1982,1,13,1673521167,designed by Realme
+501,Realme GT Master Edition Explorer smartphone,764,1,13,1680605967,designed by Realme
+502,Realme C20A smartphone,1134,1,13,1678359567,designed by Realme
+503,Realme GT Neo2T smartphone,1230,1,13,1675940367,designed by Realme
+504,Realme GT Explorer Master Edition Racing smartphone,585,1,13,1674385167,designed by Realme
+505,Realme GT Neo2s smartphone,682,1,13,1676717967,designed by Realme
+506,Realme GT Explorer Master Edition Voyager smartphone,232,1,13,1674903567,designed by Realme
+507,Realme GT Neo2s Master Edition smartphone,875,1,13,1674644367,designed by Realme
+508,Realme Narzo 30 5G smartphone,470,1,13,1680605967,designed by Realme
+509,Realme Q3s smartphone,125,1,13,1679655567,designed by Realme
+510,Realme Q3 Pro Carnival Edition smartphone,1931,1,13,1681383567,designed by Realme
+511,Realme Q3s Master Edition smartphone,1293,1,13,1680001167,designed by Realme
+512,Realme V5i smartphone,883,1,13,1681210767,designed by Realme
+513,Realme V5 5G Racing smartphone,1295,1,13,1680951567,designed by Realme
+514,Realme V5 5G Superstar smartphone,1579,1,13,1676977167,designed by Realme
+515,Realme V5 5G Illumination smartphone,260,1,13,1673261967,designed by Realme
+516,Realme V5 5G Sun smartphone,1202,1,13,1674817167,designed by Realme
+517,Realme V5 5G Fantasy smartphone,1950,1,13,1679655567,designed by Realme
+518,Realme V5 5G Gradient smartphone,616,1,13,1677236367,designed by Realme
+519,Realme V5 5G Starry smartphone,533,1,13,1676458767,designed by Realme
+520,Realme V5 5G Blue smartphone,336,1,13,1680951567,designed by Realme
+521,Realme V5 5G Silver smartphone,251,1,13,1674298767,designed by Realme
+522,Realme V5 5G Red smartphone,407,1,13,1680346767,designed by Realme
+523,Realme V5 5G Green smartphone,1872,1,13,1681210767,designed by Realme
+524,Realme V5 5G Yellow smartphone,264,1,13,1673089167,designed by Realme
+525,Oppo Find X3 Pro smartphone,312,1,12,1678445967,designed by Oppo
+526,Oppo Find X3 Neo smartphone,1511,1,12,1673002767,designed by Oppo
+527,Oppo Find X3 Lite smartphone,1128,1,12,1680433167,designed by Oppo
+528,Oppo Reno6 Pro 5G smartphone,329,1,12,1681037967,designed by Oppo
+529,Oppo Reno6 5G smartphone,1058,1,12,1674039567,designed by Oppo
+530,Oppo Reno5 Pro 5G smartphone,800,1,12,1677409167,designed by Oppo
+531,Oppo Reno5 5G smartphone,1673,1,12,1681037967,designed by Oppo
+532,Oppo A94 5G smartphone,1774,1,12,1676890767,designed by Oppo
+533,Oppo A74 5G smartphone,308,1,12,1677668367,designed by Oppo
+534,Oppo A53 smartphone,1178,1,12,1680519567,designed by Oppo
+535,Oppo A15 smartphone,988,1,12,1673175567,designed by Oppo
+536,Oppo A53s smartphone,749,1,12,1675853967,designed by Oppo
+537,Oppo A31 smartphone,1244,1,12,1678532367,designed by Oppo
+538,Oppo A12 smartphone,475,1,12,1678705167,designed by Oppo
+539,Oppo A11k smartphone,1768,1,12,1674557967,designed by Oppo
+540,Oppo F19 Pro+ smartphone,1029,1,12,1674039567,designed by Oppo
+541,Oppo F19 Pro smartphone,1100,1,12,1678359567,designed by Oppo
+542,Oppo F19 smartphone,773,1,12,1678618767,designed by Oppo
+543,Oppo F17 Pro smartphone,1514,1,12,1679396367,designed by Oppo
+544,Oppo F17 smartphone,1601,1,12,1680605967,designed by Oppo
+545,Oppo F15 smartphone,1959,1,12,1678705167,designed by Oppo
+546,Oppo F11 Pro smartphone,1242,1,12,1673261967,designed by Oppo
+547,Oppo F11 smartphone,835,1,12,1673261967,designed by Oppo
+548,Oppo A9 (2020) smartphone,1207,1,12,1678445967,designed by Oppo
+549,Oppo A5 (2020) smartphone,1936,1,12,1676717967,designed by Oppo
+550,Oppo A9x smartphone,636,1,12,1676458767,designed by Oppo
+551,Oppo A9 smartphone,1167,1,12,1677841167,designed by Oppo
+552,Oppo Reno4 Pro 5G smartphone,648,1,12,1674039567,designed by Oppo
+553,Oppo Reno4 5G smartphone,1183,1,12,1681124367,designed by Oppo
+554,Oppo Reno3 Pro smartphone,130,1,12,1680173967,designed by Oppo
+555,Oppo Reno3 smartphone,1757,1,12,1677409167,designed by Oppo
+556,Oppo Reno2 smartphone,753,1,12,1680260367,designed by Oppo
+557,Oppo Reno2 F smartphone,717,1,12,1674817167,designed by Oppo
+558,Oppo Reno2 Z smartphone,1789,1,12,1681037967,designed by Oppo
+559,Oppo F11 Pro Marvel's Avengers Limited Edition smartphone,812,1,12,1673261967,designed by Oppo
+560,Oppo F9 Pro smartphone,636,1,12,1678359567,designed by Oppo
+561,Oppo F9 smartphone,801,1,12,1673175567,designed by Oppo
+562,Oppo F7 smartphone,305,1,12,1675508367,designed by Oppo
+563,Oppo F5 Youth smartphone,1277,1,12,1673693967,designed by Oppo
+564,Oppo F3 Plus smartphone,502,1,12,1674989967,designed by Oppo
+565,Oppo F3 smartphone,1603,1,12,1678186767,designed by Oppo
+566,Oppo R17 smartphone,1606,1,12,1678100367,designed by Oppo
+567,Oppo R15 Pro smartphone,605,1,12,1677927567,designed by Oppo
+568,Oppo R11s Plus smartphone,669,1,12,1680260367,designed by Oppo
+569,Oppo R11s smartphone,1994,1,12,1681124367,designed by Oppo
+570,Oppo R11 Plus smartphone,285,1,12,1680778767,designed by Oppo
+571,Oppo R11 smartphone,382,1,12,1678618767,designed by Oppo
+572,Oppo A77 smartphone,1580,1,12,1679914767,designed by Oppo
+573,Oppo A57 smartphone,541,1,12,1678186767,designed by Oppo
+574,Oppo A37 smartphone,1883,1,12,1679914767,designed by Oppo
+575,Asus ROG Phone 5 smartphone,532,1,2,1680433167,designed by Asus
+576,Asus Zenfone 8 Flip smartphone,719,1,2,1675249167,designed by Asus
+577,Asus Zenfone 8 smartphone,1142,1,2,1674903567,designed by Asus
+578,Asus ROG Phone 3 smartphone,624,1,2,1679655567,designed by Asus
+579,Asus Zenfone 7 Pro smartphone,623,1,2,1678273167,designed by Asus
+580,Asus Zenfone 7 smartphone,192,1,2,1673261967,designed by Asus
+581,Asus Zenfone 6Z smartphone,965,1,2,1676458767,designed by Asus
+582,Asus ROG Phone 2 smartphone,1208,1,2,1675421967,designed by Asus
+583,Asus Zenfone 6 smartphone,575,1,2,1676458767,designed by Asus
+584,Asus Zenfone 5Z smartphone,423,1,2,1679655567,designed by Asus
+585,Asus Zenfone 5 smartphone,1169,1,2,1680173967,designed by Asus
+586,Asus Zenfone 4 Pro smartphone,157,1,2,1676631567,designed by Asus
+587,Asus Zenfone 4 Selfie Pro smartphone,1960,1,2,1674989967,designed by Asus
+588,Asus Zenfone 4 Selfie smartphone,1792,1,2,1677409167,designed by Asus
+589,Asus Zenfone 4 Max smartphone,590,1,2,1673780367,designed by Asus
+590,Asus Zenfone 4 smartphone,1164,1,2,1675076367,designed by Asus
+591,Asus Zenfone 3 Deluxe smartphone,1922,1,2,1676113167,designed by Asus
+592,Asus Zenfone 3 Ultra smartphone,391,1,2,1673693967,designed by Asus
+593,Asus Zenfone 3 Zoom smartphone,1054,1,2,1680433167,designed by Asus
+594,Asus Zenfone 3 Laser smartphone,1253,1,2,1674125967,designed by Asus
+595,Asus Zenfone 3 Max smartphone,1370,1,2,1673693967,designed by Asus
+596,Asus Zenfone 3 smartphone,961,1,2,1673175567,designed by Asus
+597,Asus Zenfone 2 Deluxe Special Edition smartphone,567,1,2,1679482767,designed by Asus
+598,Asus Zenfone 2 Deluxe smartphone,1346,1,2,1676458767,designed by Asus
+599,Asus Zenfone 2 Laser smartphone,1271,1,2,1681037967,designed by Asus
+600,Asus Zenfone 2E smartphone,834,1,2,1676199567,designed by Asus
+601,Asus Zenfone Selfie smartphone,536,1,2,1680778767,designed by Asus
+602,Asus Zenfone Go smartphone,1117,1,2,1674125967,designed by Asus
+603,Asus Zenfone 6 Lite smartphone,1333,1,2,1676458767,designed by Asus
+604,Asus Zenfone Live L1 smartphone,1235,1,2,1675940367,designed by Asus
+605,Asus Zenfone V smartphone,226,1,2,1675249167,designed by Asus
+606,Asus Zenfone 3s Max smartphone,414,1,2,1679137167,designed by Asus
+607,Asus Zenfone AR smartphone,1538,1,2,1678445967,designed by Asus
+608,Asus Zenfone Live smartphone,540,1,2,1673002767,designed by Asus
+609,Asus Zenfone 3 Ultra ZU680KL smartphone,1502,1,2,1674903567,designed by Asus
+610,Asus Zenfone Max Plus (M2) smartphone,1935,1,2,1678359567,designed by Asus
+611,Asus Zenfone Max Pro (M2) smartphone,1371,1,2,1680778767,designed by Asus
+612,Asus Zenfone Max (M2) smartphone,596,1,2,1674471567,designed by Asus
+613,Asus Zenfone Max Pro (M1) smartphone,1644,1,2,1681037967,designed by Asus
+614,Asus Zenfone Max (M1) smartphone,1365,1,2,1675335567,designed by Asus
+615,Asus Zenfone 5 Lite smartphone,248,1,2,1676977167,designed by Asus
+616,Asus Zenfone 5Q smartphone,796,1,2,1678273167,designed by Asus
+617,Asus Zenfone 4 Max Plus smartphone,243,1,2,1679050767,designed by Asus
+618,Asus Zenfone 4 Max Pro smartphone,931,1,2,1678877967,designed by Asus
+619,Asus Zenfone 4 Max Lite smartphone,1372,1,2,1677668367,designed by Asus
+620,Asus Zenfone 4 Max Plus (M1) smartphone,1227,1,2,1681037967,designed by Asus
+621,Asus Zenfone 4 Max (ZC554KL) smartphone,1356,1,2,1677409167,designed by Asus
+622,Asus Zenfone 4 Max (ZC520KL) smartphone,406,1,2,1680087567,designed by Asus
+623,Asus Zenfone Go 4.5 LTE smartphone,707,1,2,1677409167,designed by Asus
+624,Asus Zenfone Go 5.0 LTE smartphone,1895,1,2,1679741967,designed by Asus
+625,Huawei P50 Pro smartphone,124,1,6,1673261967,designed by Huawei
+626,Huawei P50 smartphone,1792,1,6,1679137167,designed by Huawei
+627,Huawei Mate 40 Pro smartphone,342,1,6,1680260367,designed by Huawei
+628,Huawei Mate 40 smartphone,1164,1,6,1674817167,designed by Huawei
+629,Huawei Mate X2 smartphone,1991,1,6,1681469967,designed by Huawei
+630,Huawei Nova 8 Pro smartphone,568,1,6,1673002767,designed by Huawei
+631,Huawei Nova 8 smartphone,1396,1,6,1680951567,designed by Huawei
+632,Huawei Nova 7 SE smartphone,1408,1,6,1673607567,designed by Huawei
+633,Huawei Nova 7i smartphone,1414,1,6,1676631567,designed by Huawei
+634,Huawei P40 Pro smartphone,152,1,6,1677236367,designed by Huawei
+635,Huawei P40 smartphone,641,1,6,1674298767,designed by Huawei
+636,Huawei P30 Pro smartphone,875,1,6,1673261967,designed by Huawei
+637,Huawei P30 smartphone,1697,1,6,1674817167,designed by Huawei
+638,Huawei Mate 30 Pro smartphone,294,1,6,1681556367,designed by Huawei
+639,Huawei Mate 30 smartphone,1740,1,6,1679482767,designed by Huawei
+640,Huawei Mate 20 Pro smartphone,1393,1,6,1676285967,designed by Huawei
+641,Huawei Mate 20 smartphone,336,1,6,1681124367,designed by Huawei
+642,Huawei Y9 Prime (2019) smartphone,1753,1,6,1678964367,designed by Huawei
+643,Huawei Y7 Prime (2019) smartphone,539,1,6,1680433167,designed by Huawei
+644,Huawei Y6 (2019) smartphone,1958,1,6,1674298767,designed by Huawei
+645,Lenovo Legion Phone Duel 2 smartphone,1191,1,7,1675335567,designed by Lenovo
+646,Lenovo Legion Phone Duel smartphone,1558,1,7,1674298767,designed by Lenovo
+647,Lenovo Z6 Pro smartphone,1149,1,7,1679914767,designed by Lenovo
+648,Lenovo Z6 Youth smartphone,1562,1,7,1678532367,designed by Lenovo
+649,Lenovo K12 Note smartphone,642,1,7,1679223567,designed by Lenovo
+650,Lenovo K12 smartphone,1640,1,7,1677927567,designed by Lenovo
+651,Lenovo K11 Power smartphone,954,1,7,1677236367,designed by Lenovo
+652,Lenovo K10 Plus smartphone,460,1,7,1676977167,designed by Lenovo
+653,Lenovo K10 Note smartphone,1567,1,7,1678186767,designed by Lenovo
+654,Lenovo K10 smartphone,1141,1,7,1678100367,designed by Lenovo
+655,Lenovo K9 Note smartphone,1057,1,7,1679569167,designed by Lenovo
+656,Lenovo K8 Note smartphone,677,1,7,1673780367,designed by Lenovo
+657,Lenovo K8 Plus smartphone,1246,1,7,1678445967,designed by Lenovo
+658,Lenovo K8 smartphone,1072,1,7,1674125967,designed by Lenovo
+659,Lenovo Vibe Z2 Pro smartphone,450,1,7,1681556367,designed by Lenovo
+660,Lenovo Vibe X2 Pro smartphone,797,1,7,1673521167,designed by Lenovo
+661,Lenovo Vibe X2 smartphone,1192,1,7,1675076367,designed by Lenovo
+662,Lenovo Vibe S1 Lite smartphone,921,1,7,1673521167,designed by Lenovo
+663,Lenovo Vibe S1 smartphone,1624,1,7,1673261967,designed by Lenovo
+664,Lenovo Vibe P1 smartphone,1401,1,7,1674644367,designed by Lenovo
+665,Lenovo Vibe K5 Plus smartphone,918,1,7,1675076367,designed by Lenovo
+666,Lenovo Vibe K5 smartphone,735,1,7,1680001167,designed by Lenovo
+667,Lenovo Vibe C2 Power smartphone,862,1,7,1681383567,designed by Lenovo
+668,Lenovo Vibe C2 smartphone,990,1,7,1679050767,designed by Lenovo
+669,Lenovo Vibe B smartphone,1235,1,7,1675249167,designed by Lenovo
+670,Lenovo Vibe A smartphone,1964,1,7,1675076367,designed by Lenovo
+671,Lenovo S5 Pro GT smartphone,200,1,7,1674125967,designed by Lenovo
+672,Lenovo S5 Pro smartphone,1448,1,7,1676977167,designed by Lenovo
+673,Lenovo S5 smartphone,144,1,7,1673434767,designed by Lenovo
+674,Lenovo S60 smartphone,973,1,7,1673866767,designed by Lenovo
+675,Lenovo S850 smartphone,1528,1,7,1675681167,designed by Lenovo
+676,Lenovo S860 smartphone,500,1,7,1676545167,designed by Lenovo
+677,Lenovo A7000 Plus smartphone,1371,1,7,1675767567,designed by Lenovo
+678,Lenovo A7000 Turbo smartphone,602,1,7,1674730767,designed by Lenovo
+679,Lenovo A7000 smartphone,1023,1,7,1676372367,designed by Lenovo
+680,Lenovo A6000 Plus smartphone,393,1,7,1675681167,designed by Lenovo
+681,Lenovo A6000 Shot smartphone,349,1,7,1674989967,designed by Lenovo
+682,Lenovo A6000 smartphone,720,1,7,1678877967,designed by Lenovo
+683,Lenovo A5000 smartphone,1861,1,7,1674212367,designed by Lenovo
+684,Lenovo A3690 smartphone,361,1,7,1676977167,designed by Lenovo
+685,Lenovo A319 smartphone,1951,1,7,1673693967,designed by Lenovo
+686,Lenovo A2010 smartphone,404,1,7,1680001167,designed by Lenovo
+687,Lenovo A1000 smartphone,1407,1,7,1679482767,designed by Lenovo
+688,Lenovo K6 Note smartphone,1730,1,7,1675335567,designed by Lenovo
+689,Lenovo K6 Power smartphone,151,1,7,1680692367,designed by Lenovo
+690,Lenovo K6 smartphone,1135,1,7,1673693967,designed by Lenovo
+691,Lenovo Vibe K4 Note smartphone,1057,1,7,1679482767,designed by Lenovo
+692,Lenovo Vibe K4 smartphone,1748,1,7,1675940367,designed by Lenovo
+693,Lenovo Vibe P2 smartphone,1000,1,7,1673607567,designed by Lenovo
+694,Lenovo Vibe Shot smartphone,1395,1,7,1674385167,designed by Lenovo
+695,BlackBerry KEY2 LE smartphone,132,1,3,1678618767,designed by BlackBerry
+696,BlackBerry KEY2 smartphone,791,1,3,1672916367,designed by BlackBerry
+697,BlackBerry Motion smartphone,288,1,3,1680001167,designed by BlackBerry
+698,BlackBerry Aurora smartphone,1316,1,3,1676026767,designed by BlackBerry
+699,BlackBerry KEYone smartphone,1779,1,3,1681297167,designed by BlackBerry
+700,BlackBerry DTEK60 smartphone,450,1,3,1679655567,designed by BlackBerry
+701,BlackBerry DTEK50 smartphone,1188,1,3,1677495567,designed by BlackBerry
+702,BlackBerry Priv smartphone,1712,1,3,1681297167,designed by BlackBerry
+703,BlackBerry Classic smartphone,1362,1,3,1680087567,designed by BlackBerry
+704,BlackBerry Passport smartphone,671,1,3,1674644367,designed by BlackBerry
+705,BlackBerry Z30 smartphone,626,1,3,1676631567,designed by BlackBerry
+706,BlackBerry Z10 smartphone,701,1,3,1677581967,designed by BlackBerry
+707,BlackBerry Q10 smartphone,870,1,3,1679482767,designed by BlackBerry
+708,BlackBerry Q5 smartphone,1909,1,3,1673175567,designed by BlackBerry
+709,BlackBerry Bold 9900 smartphone,1040,1,3,1674903567,designed by BlackBerry
+710,Google Pixel 6 Pro smartphone,1996,1,4,1677754767,designed by Google
+711,Google Pixel 6 smartphone,175,1,4,1676026767,designed by Google
+712,Google Pixel 5a smartphone,449,1,4,1674644367,designed by Google
+713,Google Pixel 5 smartphone,1724,1,4,1674125967,designed by Google
+714,Google Pixel 4a 5G smartphone,830,1,4,1679914767,designed by Google
+715,Google Pixel 4a smartphone,906,1,4,1676890767,designed by Google
+716,Google Pixel 4 XL smartphone,1907,1,4,1677581967,designed by Google
+717,Google Pixel 4 smartphone,725,1,4,1678877967,designed by Google
+718,Google Pixel 3a XL smartphone,1857,1,4,1676890767,designed by Google
+719,Google Pixel 3a smartphone,825,1,4,1677927567,designed by Google
+720,Google Pixel 3 XL smartphone,1752,1,4,1673261967,designed by Google
+721,Google Pixel 3 smartphone,168,1,4,1673261967,designed by Google
+722,Google Pixel 2 XL smartphone,561,1,4,1673780367,designed by Google
+723,Google Pixel 2 smartphone,1898,1,4,1674385167,designed by Google
+724,Google Pixel XL smartphone,235,1,4,1674298767,designed by Google
+725,Google Pixel smartphone,323,1,4,1677581967,designed by Google
+726,Google Nexus 6P smartphone,593,1,4,1681297167,designed by Google
+727,Google Nexus 5X smartphone,1541,1,4,1681383567,designed by Google
+728,Google Nexus 6 smartphone,1390,1,4,1680865167,designed by Google
+729,Google Nexus 5 smartphone,1458,1,4,1679655567,designed by Google
+730,Dell XPS 13 laptop,1126,5,20,1681297167,designed by Dell
+731,Dell Inspiron 15 3000 laptop,104,5,20,1680260367,designed by Dell
+732,Dell G5 15 laptop,467,5,20,1676113167,designed by Dell
+733,Dell Latitude 9510 laptop,1838,5,20,1673866767,designed by Dell
+734,Dell Precision 5550 laptop,938,5,20,1675508367,designed by Dell
+735,Dell Vostro 15 3590 laptop,320,5,20,1676545167,designed by Dell
+736,Dell Alienware Area-51m laptop,1424,5,20,1678445967,designed by Dell
+737,Dell G3 15 laptop,1116,5,20,1678964367,designed by Dell
+738,Dell Inspiron 14 5000 laptop,1646,5,20,1679569167,designed by Dell
+739,Dell Latitude 7410 laptop,574,5,20,1679050767,designed by Dell
+740,Dell XPS 15 laptop,1772,5,20,1675594767,designed by Dell
+741,Dell Inspiron 13 7000 laptop,1743,5,20,1674471567,designed by Dell
+742,Dell G7 17 laptop,871,5,20,1678705167,designed by Dell
+743,Dell Latitude 5400 laptop,258,5,20,1677754767,designed by Dell
+744,Dell Precision 5750 laptop,554,5,20,1677581967,designed by Dell
+745,Dell Vostro 14 5401 laptop,174,5,20,1674385167,designed by Dell
+746,Dell Alienware m15 R3 laptop,1058,5,20,1673780367,designed by Dell
+747,Dell Inspiron 17 3000 laptop,449,5,20,1678791567,designed by Dell
+748,Dell Latitude 5300 laptop,525,5,20,1678877967,designed by Dell
+749,Dell Precision 7550 laptop,317,5,20,1677495567,designed by Dell
+750,Dell Vostro 15 7500 laptop,1732,5,20,1677927567,designed by Dell
+751,Dell XPS 17 laptop,439,5,20,1679569167,designed by Dell
+752,Dell Inspiron 15 5000 laptop,1684,5,20,1681037967,designed by Dell
+753,Dell G5 SE laptop,1631,5,20,1673089167,designed by Dell
+754,Dell Latitude 7400 laptop,591,5,20,1678445967,designed by Dell
+755,Dell Precision 3450 laptop,1998,5,20,1674212367,designed by Dell
+756,Dell Vostro 14 3490 laptop,959,5,20,1673607567,designed by Dell
+757,Dell Alienware m17 R3 laptop,500,5,20,1676285967,designed by Dell
+758,Dell Inspiron 14 3000 laptop,1392,5,20,1676458767,designed by Dell
+759,Dell Latitude 5500 laptop,1315,5,20,1675076367,designed by Dell
+760,Dell Precision 5550 2-in-1 laptop,476,5,20,1675853967,designed by Dell
+761,Dell Vostro 15 5502 laptop,1400,5,20,1678705167,designed by Dell
+762,Dell XPS 13 2-in-1 laptop,439,5,20,1679482767,designed by Dell
+763,Dell Inspiron 15 7000 laptop,1136,5,20,1673953167,designed by Dell
+764,Dell G7 15 laptop,1492,5,20,1679050767,designed by Dell
+765,Dell Latitude 5401 laptop,1497,5,20,1681556367,designed by Dell
+766,Dell Precision 5750 2-in-1 laptop,848,5,20,1677236367,designed by Dell
+767,Dell Vostro 15 3591 laptop,1145,5,20,1678445967,designed by Dell
+768,Dell XPS 13 Developer Edition laptop,956,5,20,1673175567,designed by Dell
+769,Dell Inspiron 15 3593 laptop,657,5,20,1673175567,designed by Dell
+770,Dell G3 17 laptop,203,5,20,1678273167,designed by Dell
+771,Dell Latitude 3410 laptop,360,5,20,1676545167,designed by Dell
+772,Dell Precision 3561 laptop,820,5,20,1673780367,designed by Dell
+773,Dell Vostro 14 5481 laptop,1481,5,20,1675249167,designed by Dell
+774,Dell Alienware m15 R4 laptop,1191,5,20,1677927567,designed by Dell
+775,Dell Inspiron 13 5000 laptop,386,5,20,1674039567,designed by Dell
+776,Dell Latitude 7400 2-in-1 laptop,342,5,20,1677236367,designed by Dell
+777,Dell Precision 7550 2-in-1 laptop,1429,5,20,1678359567,designed by Dell
+778,Dell Vostro 15 3593 laptop,1134,5,20,1675421967,designed by Dell
+779,Dell XPS 13 9310 laptop,1849,5,20,1676545167,designed by Dell
+780,Dell Inspiron 15 5505 laptop,268,5,20,1678964367,designed by Dell
+781,Dell G5 15 SE laptop,727,5,20,1673261967,designed by Dell
+782,Dell Latitude 5300 2-in-1 laptop,199,5,20,1674817167,designed by Dell
+783,Dell Precision 3450 2-in-1 laptop,1519,5,20,1681469967,designed by Dell
+784,Dell Vostro 14 5490 laptop,1048,5,20,1674385167,designed by Dell
+785,Dell Alienware m17 R4 laptop,658,5,20,1676026767,designed by Dell
+786,Dell Inspiron 13 7000 2-in-1 laptop,143,5,20,1675249167,designed by Dell
+787,Dell Latitude 5402 laptop,855,5,20,1674039567,designed by Dell
+788,Dell Precision 7750 laptop,1361,5,20,1678186767,designed by Dell
+789,Dell Vostro 15 7500 2-in-1 laptop,1979,5,20,1677063567,designed by Dell
+790,Dell XPS 13 7390 laptop,1142,5,20,1674039567,designed by Dell
+791,Dell Inspiron 17 7000 2-in-1 laptop,1816,5,20,1675421967,designed by Dell
+792,Dell G5 15 SE (2021) laptop,1823,5,20,1679137167,designed by Dell
+793,Dell Latitude 7400 2-in-1 (2021) laptop,739,5,20,1678618767,designed by Dell
+794,Dell Precision 3561 2-in-1 laptop,1029,5,20,1676977167,designed by Dell
+795,Dell Vostro 14 3400 laptop,576,5,20,1680519567,designed by Dell
+796,Dell Alienware m15 R5 laptop,819,5,20,1677236367,designed by Dell
+797,Dell Inspiron 14 5000 2-in-1 laptop,604,5,20,1680692367,designed by Dell
+798,Dell Latitude 7320 laptop,355,5,20,1679741967,designed by Dell
+799,Dell Precision 3560 laptop,456,5,20,1675335567,designed by Dell
+800,Dell Vostro 13 5301 laptop,899,5,20,1677495567,designed by Dell
+801,Dell XPS 13 9310 2-in-1 laptop,1923,5,20,1681210767,designed by Dell
+802,Dell Inspiron 15 7506 2-in-1 laptop,374,5,20,1674557967,designed by Dell
+803,Dell G7 15 (2021) laptop,1230,5,20,1681556367,designed by Dell
+804,Dell Latitude 5420 laptop,1780,5,20,1676372367,designed by Dell
+805,Dell Precision 7550 (2021) laptop,978,5,20,1680778767,designed by Dell
+806,Dell Vostro 15 5510 laptop,1671,5,20,1680519567,designed by Dell
+807,Dell XPS 13 9300 laptop,313,5,20,1674298767,designed by Dell
+808,Dell Inspiron 15 5515 laptop,1079,5,20,1680951567,designed by Dell
+809,Dell G5 15 (2021) laptop,1057,5,20,1675681167,designed by Dell
+810,Dell Latitude 7320 2-in-1 laptop,1208,5,20,1679137167,designed by Dell
+811,Dell Precision 3450 Small Form Factor laptop,1770,5,20,1681556367,designed by Dell
+812,Dell Vostro 15 3500 laptop,764,5,20,1680605967,designed by Dell
+813,Dell XPS 13 (2020) laptop,1778,5,20,1677495567,designed by Dell
+814,Dell Inspiron 14 7000 laptop,129,5,20,1676199567,designed by Dell
+815,Dell Latitude 5424 Rugged laptop,1874,5,20,1679137167,designed by Dell
+816,Dell Precision 5760 laptop,694,5,20,1677063567,designed by Dell
+817,Dell Vostro 15 7500 (2021) laptop,783,5,20,1674644367,designed by Dell
+818,Dell XPS 15 9500 laptop,1363,5,20,1676631567,designed by Dell
+819,Dell Inspiron 15 3505 laptop,937,5,20,1681210767,designed by Dell
+820,Dell G7 17 (2021) laptop,1677,5,20,1679828367,designed by Dell
+821,Dell Latitude 5424 Rugged Extreme laptop,257,5,20,1678877967,designed by Dell
+822,Dell Precision 3551 laptop,683,5,20,1676804367,designed by Dell
+823,Dell Vostro 15 3501 laptop,1273,5,20,1679223567,designed by Dell
+824,Dell XPS 13 7390 2-in-1 (2020) laptop,113,5,20,1676717967,designed by Dell
+825,Dell Inspiron 15 5502 laptop,1510,5,20,1673434767,designed by Dell
+826,Dell Latitude 7320 Detachable laptop,1469,5,20,1678359567,designed by Dell
+827,Dell Precision 7760 laptop,1362,5,20,1675335567,designed by Dell
+828,Dell Vostro 14 5402 laptop,333,5,20,1681037967,designed by Dell
+829,Asus ZenBook UX425 laptop,1869,5,2,1677581967,designed by Asus
+830,Asus VivoBook S15 laptop,1592,5,2,1673002767,designed by Asus
+831,Asus ROG Zephyrus G15 laptop,1419,5,2,1675421967,designed by Asus
+832,Asus TUF Gaming A15 laptop,868,5,2,1676372367,designed by Asus
+833,Asus Chromebook Flip C434 laptop,157,5,2,1680260367,designed by Asus
+834,Asus ZenBook Duo UX481 laptop,1617,5,2,1681469967,designed by Asus
+835,Asus VivoBook Flip 14 laptop,647,5,2,1680605967,designed by Asus
+836,Asus ROG Zephyrus S17 laptop,1734,5,2,1679396367,designed by Asus
+837,Asus TUF Gaming FX505 laptop,1942,5,2,1676458767,designed by Asus
+838,Asus ROG Strix Scar III laptop,1732,5,2,1679050767,designed by Asus
+839,Asus ZenBook 13 UX333 laptop,725,5,2,1678445967,designed by Asus
+840,Asus VivoBook S14 laptop,1872,5,2,1673521167,designed by Asus
+841,Asus ROG Zephyrus G14 laptop,1091,5,2,1674125967,designed by Asus
+842,Asus TUF Gaming FX705 laptop,126,5,2,1681383567,designed by Asus
+843,Asus Chromebook Flip C302 laptop,773,5,2,1673261967,designed by Asus
+844,Asus ZenBook Pro Duo UX581 laptop,288,5,2,1680692367,designed by Asus
+845,Asus VivoBook 15 laptop,678,5,2,1674557967,designed by Asus
+846,Asus ROG Strix G laptop,1091,5,2,1677063567,designed by Asus
+847,Asus ZenBook Flip 13 laptop,1197,5,2,1674644367,designed by Asus
+848,Asus TUF Gaming FX505DT laptop,339,5,2,1676717967,designed by Asus
+849,Asus ROG Zephyrus M15 laptop,1376,5,2,1681556367,designed by Asus
+850,Asus VivoBook S13 laptop,1712,5,2,1674039567,designed by Asus
+851,Asus Chromebook C523 laptop,325,5,2,1679914767,designed by Asus
+852,Asus ZenBook UX331 laptop,329,5,2,1676113167,designed by Asus
+853,Asus ROG Zephyrus S GX701 laptop,1869,5,2,1675940367,designed by Asus
+854,Asus TUF Gaming FX504 laptop,244,5,2,1678445967,designed by Asus
+855,Asus VivoBook Flip 12 laptop,733,5,2,1674039567,designed by Asus
+856,Asus ROG Strix Hero III laptop,383,5,2,1676199567,designed by Asus
+857,Asus ZenBook 14 UX434 laptop,1898,5,2,1674989967,designed by Asus
+858,Asus VivoBook 14 X412 laptop,1377,5,2,1677668367,designed by Asus
+859,Asus Chromebook C423 laptop,717,5,2,1676977167,designed by Asus
+860,Asus ROG Zephyrus G GA502 laptop,920,5,2,1674903567,designed by Asus
+861,Asus TUF Gaming FX705DY laptop,1035,5,2,1681383567,designed by Asus
+862,Asus ZenBook Flip UX362 laptop,258,5,2,1679223567,designed by Asus
+863,Asus VivoBook S510 laptop,1386,5,2,1681210767,designed by Asus
+864,Asus ROG Strix Scar II laptop,680,5,2,1676372367,designed by Asus
+865,Asus ZenBook 15 UX533 laptop,1111,5,2,1680173967,designed by Asus
+866,Asus TUF Gaming FX505DY laptop,1818,5,2,1678532367,designed by Asus
+867,Asus VivoBook S15 S530 laptop,176,5,2,1674125967,designed by Asus
+868,Asus Chromebook C202 laptop,638,5,2,1675594767,designed by Asus
+869,Asus ROG Zephyrus S GX531 laptop,600,5,2,1677149967,designed by Asus
+870,Asus TUF Gaming FX705GM laptop,1251,5,2,1673780367,designed by Asus
+871,Asus ZenBook UX461 laptop,430,5,2,1679828367,designed by Asus
+872,Asus VivoBook S15 S532 laptop,298,5,2,1673261967,designed by Asus
+873,Asus Chromebook Flip C101 laptop,1510,5,2,1679914767,designed by Asus
+874,Asus ROG Strix GL503 laptop,1409,5,2,1676026767,designed by Asus
+875,Asus ZenBook 13 UX331UN laptop,1849,5,2,1673780367,designed by Asus
+876,Asus VivoBook S15 S510 laptop,649,5,2,1679050767,designed by Asus
+877,Asus TUF Gaming FX504GE laptop,1550,5,2,1675249167,designed by Asus
+878,Asus Chromebook C223 laptop,943,5,2,1677063567,designed by Asus
+879,Asus ROG Zephyrus M GU502 laptop,210,5,2,1675162767,designed by Asus
+880,Asus VivoBook 15 X510 laptop,157,5,2,1679914767,designed by Asus
+881,Asus ZenBook UX430 laptop,1050,5,2,1681037967,designed by Asus
+882,Asus TUF Gaming FX505DD laptop,885,5,2,1674903567,designed by Asus
+883,Asus VivoBook Flip TP412 laptop,599,5,2,1676372367,designed by Asus
+884,Asus Chromebook C202SA laptop,1259,5,2,1678532367,designed by Asus
+885,Asus ROG Zephyrus GX501VI laptop,1272,5,2,1681210767,designed by Asus
+886,Asus TUF Gaming FX705GE laptop,583,5,2,1676199567,designed by Asus
+887,Asus ZenBook UX410 laptop,1286,5,2,1680865167,designed by Asus
+888,Asus VivoBook S15 S530U laptop,1076,5,2,1678618767,designed by Asus
+889,Asus Chromebook C101PA laptop,830,5,2,1675853967,designed by Asus
+890,Asus ROG Strix Scar II GL704 laptop,988,5,2,1676804367,designed by Asus
+891,Asus ZenBook Flip S UX370 laptop,1383,5,2,1674212367,designed by Asus
+892,Asus TUF Gaming FX504GD laptop,1259,5,2,1674471567,designed by Asus
+893,Asus VivoBook E203 laptop,112,5,2,1677149967,designed by Asus
+894,Asus Chromebook C300 laptop,1519,5,2,1673002767,designed by Asus
+895,Asus ROG Zephyrus GX501GI laptop,280,5,2,1673002767,designed by Asus
+896,Asus TUF Gaming FX505DV laptop,1883,5,2,1679482767,designed by Asus
+897,Asus ZenBook UX310 laptop,1893,5,2,1680951567,designed by Asus
+898,Asus VivoBook S15 S510U laptop,1114,5,2,1678359567,designed by Asus
+899,Asus Chromebook Flip C213 laptop,370,5,2,1675853967,designed by Asus
+900,Asus ROG Strix GL702 laptop,1052,5,2,1673434767,designed by Asus
+901,Asus ZenBook Flip UX561 laptop,1852,5,2,1677409167,designed by Asus
+902,Asus TUF Gaming FX504GM laptop,924,5,2,1680951567,designed by Asus
+903,Asus VivoBook Flip TP501 laptop,264,5,2,1674298767,designed by Asus
+904,Asus Chromebook C302CA laptop,878,5,2,1679223567,designed by Asus
+905,Asus ROG Zephyrus GX531GS laptop,1419,5,2,1673953167,designed by Asus
+906,Asus TUF Gaming FX705DT laptop,756,5,2,1678100367,designed by Asus
+907,Asus ZenBook UX306 laptop,931,5,2,1674989967,designed by Asus
+908,Asus VivoBook Flip TP301 laptop,1669,5,2,1678445967,designed by Asus
+909,Asus Chromebook C201 laptop,728,5,2,1675249167,designed by Asus
+910,Asus ROG Strix Scar III G531 laptop,1616,5,2,1681383567,designed by Asus
+911,Asus TUF Gaming FX505DU laptop,424,5,2,1676890767,designed by Asus
+912,Asus ZenBook Flip UX360 laptop,485,5,2,1673434767,designed by Asus
+913,Asus VivoBook S15 S510UN laptop,1992,5,2,1674989967,designed by Asus
+914,Asus Chromebook Flip C100 laptop,1847,5,2,1677322767,designed by Asus
+915,Asus ROG Zephyrus S GX502 laptop,1005,5,2,1681037967,designed by Asus
+916,Asus TUF Gaming FX504G laptop,1046,5,2,1675767567,designed by Asus
+917,Asus ZenBook UX305 laptop,1923,5,2,1676717967,designed by Asus
+918,Asus VivoBook Flip TP200 laptop,852,5,2,1675335567,designed by Asus
+919,Asus Chromebook C200 laptop,1813,5,2,1673175567,designed by Asus
+920,Asus ROG Strix GL503VD laptop,1554,5,2,1674557967,designed by Asus
+921,Asus TUF Gaming FX505 laptop,1625,5,2,1678445967,designed by Asus
+922,Asus ZenBook Flip UX563 laptop,636,5,2,1675162767,designed by Asus
+923,Asus VivoBook S15 S532FL laptop,892,5,2,1674471567,designed by Asus
+924,Asus Chromebook C213NA laptop,393,5,2,1674125967,designed by Asus
+925,Asus ROG Zephyrus G GA401 laptop,1578,5,2,1681037967,designed by Asus
+926,Asus TUF Gaming FA506 laptop,432,5,2,1681210767,designed by Asus
+927,Asus ZenBook UX303 laptop,846,5,2,1677149967,designed by Asus
+928,Asus VivoBook Flip TP501U laptop,1852,5,2,1675508367,designed by Asus
+929,Samsung Notebook 9 Pro laptop,1565,5,14,1674730767,designed by Samsung
+930,Samsung Notebook 9 Pen laptop,1689,5,14,1676372367,designed by Samsung
+931,Samsung Notebook 7 Spin laptop,1679,5,14,1679482767,designed by Samsung
+932,Samsung Notebook Flash laptop,1615,5,14,1677668367,designed by Samsung
+933,Samsung Notebook 5 laptop,1594,5,14,1674644367,designed by Samsung
+934,Samsung Notebook 3 laptop,1011,5,14,1673261967,designed by Samsung
+935,Samsung Notebook 9 laptop,128,5,14,1679914767,designed by Samsung
+936,Samsung Notebook 9 Plus laptop,1805,5,14,1680346767,designed by Samsung
+937,Samsung Notebook 9 Spin laptop,752,5,14,1672916367,designed by Samsung
+938,Samsung Notebook 9 Pen Pro laptop,955,5,14,1675594767,designed by Samsung
+939,Samsung Notebook 5 15 inch laptop,1405,5,14,1677409167,designed by Samsung
+940,Samsung Notebook Odyssey Z laptop,1476,5,14,1681037967,designed by Samsung
+941,Samsung Notebook 7 laptop,512,5,14,1681556367,designed by Samsung
+942,Samsung Notebook 7 Force laptop,304,5,14,1680865167,designed by Samsung
+943,Samsung Notebook Odyssey laptop,413,5,14,1680951567,designed by Samsung
+944,Samsung Notebook 7 Spin 15 inch laptop,1513,5,14,1673089167,designed by Samsung
+945,Samsung Notebook 9 Pro 15 inch laptop,669,5,14,1674125967,designed by Samsung
+946,Samsung Notebook 9 Pro 13 inch laptop,640,5,14,1677149967,designed by Samsung
+947,Samsung Notebook 9 Spin 13 inch laptop,1271,5,14,1675335567,designed by Samsung
+948,Samsung Notebook 9 Pen 15 inch laptop,372,5,14,1680951567,designed by Samsung
+949,AirPods Max headphone,1689,3,1,1680865167,designed by AirPods
+950,AirPods Pro headphone,1562,3,1,1677754767,designed by AirPods
+951,AirPods (3rd generation) headphone,1431,3,1,1679741967,designed by AirPods
+952,AirPods (2nd generation) headphone,1800,3,1,1681383567,designed by AirPods
+953,AirPods (1st generation) headphone,1799,3,1,1680778767,designed by AirPods
+954,Apple In-Ear with Remote and Mic headphone,344,3,1,1675681167,designed by Apple
+955,Apple EarPods with Lightning Connector headphone,322,3,1,1674557967,designed by Apple
+956,Apple EarPods with 3.5 mm Headphone Plug headphone,336,3,1,1674298767,designed by Apple
+957,Apple AirPods Max Smart Case headphone headphone,1988,3,1,1674125967,designed by Apple
+958,Apple EarPods with Lightning Connector (Black) headphone,483,3,1,1677581967,designed by Apple
+959,Apple EarPods with 3.5 mm Headphone Plug (Black) headphone,1780,3,1,1680951567,designed by Apple
+960,Samsung Galaxy Buds Pro headphone,1225,3,14,1680173967,designed by Samsung
+961,Samsung Galaxy Buds Live headphone,579,3,14,1680951567,designed by Samsung
+962,Samsung Galaxy Buds Plus headphone,1363,3,14,1674644367,designed by Samsung
+963,Samsung Galaxy Buds headphone,1432,3,14,1680519567,designed by Samsung
+964,Samsung Level U Pro Wireless headphone,778,3,14,1677841167,designed by Samsung
+965,Samsung Level On Wireless Pro headphone,704,3,14,1677322767,designed by Samsung
+966,Samsung Level On Wireless headphone,706,3,14,1679309967,designed by Samsung
+967,Samsung Level Over Wireless headphone,648,3,14,1673521167,designed by Samsung
+968,Samsung Level U Wireless headphone,1210,3,14,1679482767,designed by Samsung
+969,Samsung Level U Pro ANC Wireless headphone,1153,3,14,1672916367,designed by Samsung
+970,Samsung Level Active Wireless headphone,159,3,14,1676545167,designed by Samsung
+971,Samsung Level Box Slim Portable Speaker headphone,722,3,14,1676285967,designed by Samsung
+972,Samsung Level Box Mini Portable Speaker headphone,537,3,14,1674730767,designed by Samsung
+973,Samsung Level Box Pro Portable Speaker headphone,501,3,14,1675249167,designed by Samsung
+974,Samsung Level In ANC Wired Earphones headphone,1525,3,14,1676717967,designed by Samsung
+975,Samsung Level In Wired Earphones headphone,1091,3,14,1675681167,designed by Samsung
+976,Samsung U Flex Wireless headphone,331,3,14,1680173967,designed by Samsung
+977,Samsung Level In ANC Wired Earbuds headphone,1538,3,14,1679741967,designed by Samsung
+978,Samsung Level In ANC Wireless Earbuds headphone,192,3,14,1673953167,designed by Samsung
+979,Samsung Level In Wireless Earbuds headphone,461,3,14,1679396367,designed by Samsung
+980,Xiaomi Air 2 Pro headphone,845,3,18,1673261967,designed by Xiaomi
+981,Xiaomi Air 2 SE headphone,1766,3,18,1681383567,designed by Xiaomi
+982,Xiaomi AirDots Pro 2 headphone,1715,3,18,1678964367,designed by Xiaomi
+983,Xiaomi AirDots Pro 2S headphone,1070,3,18,1677236367,designed by Xiaomi
+984,Xiaomi AirDots 3 headphone,1905,3,18,1673175567,designed by Xiaomi
+985,Xiaomi Mi True Wireless Earphones 2 Basic headphone,777,3,18,1674557967,designed by Xiaomi
+986,Xiaomi Mi True Wireless Earphones 2S headphone,324,3,18,1673089167,designed by Xiaomi
+987,Xiaomi Mi True Wireless Earphones Basic 2 headphone,226,3,18,1676804367,designed by Xiaomi
+988,Xiaomi Mi True Wireless Earphones Basic headphone,599,3,18,1680778767,designed by Xiaomi
+989,Xiaomi Mi In-Ear Headphones Pro 2 headphone,1303,3,18,1677236367,designed by Xiaomi
+990,Xiaomi Mi In-Ear Headphones Basic headphone,1703,3,18,1674385167,designed by Xiaomi
+991,Xiaomi Mi Noise Cancelling Earphones Type-C headphone,1104,3,18,1678618767,designed by Xiaomi
+992,Xiaomi Mi Sports Bluetooth Earphones headphone,1824,3,18,1679914767,designed by Xiaomi
+993,Xiaomi Redmi AirDots headphone,770,3,18,1679914767,designed by Xiaomi
+994,Xiaomi Redmi AirDots S headphone,1983,3,18,1675162767,designed by Xiaomi
+995,Xiaomi Redmi SonicBass Wireless Earphones headphone,431,3,18,1678013967,designed by Xiaomi
+996,Xiaomi Redmi Earbuds S headphone,115,3,18,1673175567,designed by Xiaomi
+997,Xiaomi Youth Wireless Bluetooth Earphones headphone,519,3,18,1681037967,designed by Xiaomi
+998,Xiaomi Mi Gaming Headset headphone,1307,3,18,1673348367,designed by Xiaomi
+999,Xiaomi Mi Headphones Comfort headphone,830,3,18,1680260367,designed by Xiaomi
+1000,Apple Mouse (Wireless Mighty Mouse),977,4,1,1675940367,designed by Apple
+1001,Apple Mouse (Mighty Mouse),235,4,1,1673348367,designed by Apple
+1002,Apple Desktop Bus Mouse II mouse,238,4,1,1674644367,designed by Apple
+1003,Apple Desktop Bus Mouse mouse,314,4,1,1679223567,designed by Apple
+1004,Apple Pro Mouse mouse,1023,4,1,1680692367,designed by Apple
+1005,Apple USB Mouse,793,4,1,1678877967,designed by Apple
+1006,Apple Adjustable Keyboard Mouse,160,4,1,1675249167,designed by Apple
+1007,AppleDesign Mouse,1027,4,1,1673780367,designed by AppleDesign
+1008,Samsung Wireless Mouse,1639,4,14,1680001167,designed by Samsung
+1009,Samsung USB Mouse,502,4,14,1673175567,designed by Samsung
+1010,Samsung Bluetooth Mouse,1285,4,14,1677668367,designed by Samsung
+1011,Samsung Touch Mouse,735,4,14,1673693967,designed by Samsung
+1012,Samsung Notebook Mouse,1062,4,14,1679655567,designed by Samsung
+1013,Samsung Optical Mouse,1139,4,14,1678877967,designed by Samsung
+1014,Samsung Travel Mouse,202,4,14,1677149967,designed by Samsung
+1015,Samsung Slim Mouse,796,4,14,1674903567,designed by Samsung
+1016,Samsung Arc Mouse,286,4,14,1678359567,designed by Samsung
+1017,Samsung S Action Mouse,1909,4,14,1681037967,designed by Samsung
+1018,Samsung SideSync Bluetooth Mouse,495,4,14,1678705167,designed by Samsung
+1019,Samsung Mini Mouse,1351,4,14,1675681167,designed by Samsung
+1020,Samsung Glide Mouse,1143,4,14,1675853967,designed by Samsung
+1021,Samsung Eco-Friendly Mouse,1054,4,14,1680173967,designed by Samsung
+1022,Samsung Ergonomic Mouse,480,4,14,1676804367,designed by Samsung
+1023,Samsung Multi-Device Mouse,402,4,14,1677495567,designed by Samsung
+1024,Samsung Pocket Mouse,352,4,14,1676890767,designed by Samsung
+1025,Samsung Optical Travel Mouse,1467,4,14,1674039567,designed by Samsung
+1026,Samsung Wireless Presenter Mouse,1425,4,14,1678100367,designed by Samsung
+1027,Samsung Mouse Pad with Wireless Charger,851,4,14,1680778767,designed by Samsung
+1028,Xiaomi Mi Wireless Mouse,1566,4,18,1678705167,designed by Xiaomi
+1029,Xiaomi Mi Portable Mouse,1815,4,18,1677322767,designed by Xiaomi
+1030,Xiaomi Mi Gaming Mouse,1608,4,18,1673261967,designed by Xiaomi
+1031,Xiaomi Mi Dual-Mode Wireless Mouse Silent Edition,1701,4,18,1678359567,designed by Xiaomi
+1032,Xiaomi Mi Dual-Mode Wireless Mouse,942,4,18,1680951567,designed by Xiaomi
+1033,Xiaomi Mi Wireless Mouse 2,1623,4,18,1674212367,designed by Xiaomi
+1034,Xiaomi Mi Bluetooth Mouse,486,4,18,1679914767,designed by Xiaomi
+1035,Xiaomi Mi Wireless Silent Mouse,1211,4,18,1674471567,designed by Xiaomi
+1036,Xiaomi Mi Wireless Mouse Youth Edition,435,4,18,1680519567,designed by Xiaomi
+1037,Xiaomi Mi Wireless Mouse Lite,832,4,18,1679137167,designed by Xiaomi
+1038,Xiaomi Mi Portable Mouse 2,856,4,18,1676545167,designed by Xiaomi
+1039,Xiaomi Mi Mouse Pad,1198,4,18,1677841167,designed by Xiaomi
+1040,Xiaomi Mi Wireless Silent Mouse 2,1441,4,18,1680346767,designed by Xiaomi
+1041,Xiaomi Mi Bluetooth Mouse Youth Edition,1321,4,18,1673348367,designed by Xiaomi
+1042,Xiaomi Mi Dual-Mode Wireless Mouse Silent Edition 2,982,4,18,1679914767,designed by Xiaomi
+1043,Xiaomi Mi Gaming Mouse Lite,473,4,18,1677322767,designed by Xiaomi
+1044,Xiaomi Mi Bluetooth Mouse 2,939,4,18,1675249167,designed by Xiaomi
+1045,Xiaomi Mi Wireless Mouse Silent Edition 2,1657,4,18,1680692367,designed by Xiaomi
+1046,Xiaomi Mi Dual-Mode Wireless Mouse 2,403,4,18,1673434767,designed by Xiaomi
+1047,Xiaomi Mi Wireless Mouse Lite Youth Edition,1492,4,18,1679137167,designed by Xiaomi
+1048,Xiaomi Mi Wireless Keyboard,1961,6,18,1676113167,designed by Xiaomi
+1049,Xiaomi Mi Portable Wireless Keyboard,428,6,18,1678273167,designed by Xiaomi
+1050,Xiaomi Mi Mechanical Keyboard,1937,6,18,1673348367,designed by Xiaomi
+1051,Xiaomi Mi Wireless Keyboard and Mouse Set,1750,4,18,1677754767,designed by Xiaomi
+1052,Xiaomi Mi Gaming Keyboard,455,6,18,1677754767,designed by Xiaomi
+1053,Xiaomi Mi RGB Backlit Gaming Keyboard,1373,6,18,1679396367,designed by Xiaomi
+1054,Xiaomi Mi Bluetooth Keyboard,272,6,18,1679050767,designed by Xiaomi
+1055,Xiaomi Mi Wireless Keyboard 2,1779,6,18,1678013967,designed by Xiaomi
+1056,Xiaomi Mi Wireless Keyboard and Mouse Set 2,1491,4,18,1679828367,designed by Xiaomi
+1057,Xiaomi Mi Wireless Keyboard and Mouse Set Youth Edition,1215,4,18,1676890767,designed by Xiaomi
+1058,Xiaomi Mi Mechanical Keyboard Pro,1003,6,18,1674557967,designed by Xiaomi
+1059,Xiaomi Mi Mechanical Keyboard Pro 2,628,6,18,1676026767,designed by Xiaomi
+1060,Xiaomi Mi Gaming Keyboard Pro,499,6,18,1675421967,designed by Xiaomi
+1061,Xiaomi Mi Gaming Keyboard Pro 2,1078,6,18,1681297167,designed by Xiaomi
+1062,Xiaomi Mi Wireless Keyboard Lite,870,6,18,1673261967,designed by Xiaomi
+1063,Xiaomi Mi Wireless Keyboard and Mouse Combo,270,4,18,1674125967,designed by Xiaomi
+1064,Xiaomi Mi Wireless Keyboard Youth Edition,1586,6,18,1679396367,designed by Xiaomi

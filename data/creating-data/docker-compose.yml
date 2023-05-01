@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  mysql:
+    image: debezium/example-mysql:1.7
+    hostname: mysql
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=debezium
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpw
+    ports:
+      - '3306:3306'

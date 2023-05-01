@@ -1,0 +1,21 @@
+id,brand_name,description,created_at
+1,Apple,Designed by Apple,1677080316
+2,Asus,Designed by Asus,1674229116
+3,BlackBerry,Designed by BlackBerry,1673105916
+4,Google,Designed by Google,1674920316
+5,HTC,Designed by HTC,1675265916
+6,Huawei,Designed by Huawei,1677166716
+7,Lenovo,Designed by Lenovo,1673797116
+8,LG,Designed by LG,1677512316
+9,Motorola,Designed by Motorola,1678808316
+10,Nokia,Designed by Nokia,1681486716
+11,OnePlus,Designed by OnePlus,1674661116
+12,Oppo,Designed by Oppo,1677339516
+13,Realme,Designed by Realme,1675438716
+14,Samsung,Designed by Samsung,1674315516
+15,Sony,Designed by Sony,1673365116
+16,TCL,Designed by TCL,1676561916
+17,Vivo,Designed by Vivo,1678981116
+18,Xiaomi,Designed by Xiaomi,1675006716
+19,Logitech,Designed by Logitech,1681054716
+20,Dell,Designed by Dell,1679413116
