@@ -71,7 +71,7 @@ class OrderGenerator:
             cursor = conn.cursor()
             time_order = int(
                 self.local_time.timestamp()
-            ) - self.time_days * random.randint(0, 100)
+            ) - self.time_days * random.randint(0, 50)
 
             # INSERT ORDER TABLE
             sql = """

@@ -153,7 +153,7 @@ services:
       - lakehouse
 
   spark-master:
-    image: cluster-spark:3.2.0
+    image: ducdn01/cluster-apache-spark:3.2.0
     container_name: master
     ports:
       - "9090:8080"
@@ -171,7 +171,7 @@ services:
       - lakehouse
 
   spark-worker-a:
-    image: cluster-spark:3.2.0
+    image: ducdn01/cluster-apache-spark:3.2.0
     container_name: worker-a
     ports:
       - "9095:8080"
@@ -193,7 +193,7 @@ services:
       - lakehouse
 
   spark-worker-b:
-    image: cluster-spark:3.2.0
+    image: ducdn01/cluster-apache-spark:3.2.0
     container_name: worker-b
     ports:
       - "9094:8080"
