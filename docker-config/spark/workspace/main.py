@@ -33,15 +33,16 @@ class DeltaSink:
         self.spark = (
             SparkSession.builder.config(
                 "spark.jars.packages",
-                "io.delta:delta-core_2.12:1.0.1,"
-                "org.apache.spark:spark-sql-kafka-0-10_2.12:3.1.1,"
-                "org.apache.kafka:kafka-clients:2.6.0,"
-                "org.apache.spark:spark-token-provider-kafka-0-10_2.12:3.1.1,"
+                "io.delta:delta-core_2.12:2.0.0,"
+                "org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0,"
+                "org.apache.kafka:kafka-clients:2.8.0,"
+                "org.apache.spark:spark-token-provider-kafka-0-10_2.12:3.2.0,"
                 "org.apache.commons:commons-pool2:2.6.2,"
-                "org.apache.spark:spark-avro_2.12:3.1.1,"
-                "org.apache.hadoop:hadoop-aws:3.1.1,"
-                "com.amazonaws:aws-java-sdk:1.11.271,"
-                "mysql:mysql-connector-java:8.0.30,",
+                "org.apache.spark:spark-avro_2.12:3.2.0,"
+                "org.apache.hadoop:hadoop-aws:3.2.3,"
+                "com.amazonaws:aws-java-sdk:1.11.375,"
+                "org.apache.spark:spark-tags_2.12:3.2.0,"
+                "org.apache.hadoop:hadoop-common:3.2.0",
             )
             .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
             .config(
@@ -62,6 +63,7 @@ class DeltaSink:
                 "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider",
             )
             .config("spark.sql.legacy.castComplexTypesToString.enabled", "false")
+            .config("spark.databricks.delta.optimize.repartition.enabled", "true")
             .getOrCreate()
         )
 

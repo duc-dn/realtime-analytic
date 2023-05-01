@@ -1,7 +1,7 @@
-pyspark == 3.1.1
+pyspark == 3.2.0
 mysql-connector-python
 Faker
 requests
 confluent-kafka
-delta-spark==1.0.1
+delta-spark==2.0.0
 pandas

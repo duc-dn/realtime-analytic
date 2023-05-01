@@ -6,7 +6,7 @@ create table categories
     id int not null primary key auto_increment,
     category_name varchar(255) not null,
     description text,
-    created_at int 
+    created_at int
 );
 
 create table brands
@@ -21,7 +21,7 @@ create table products
 (
     id int not null primary key auto_increment,
     product_name varchar(255) not null,
-    price double not null, 
+    price double not null,
     category_id int not null,
     brand_id int not null,
     created_at int not null,
@@ -56,7 +56,7 @@ create table orders
     created_at int not null
 );
 
-create table order_status 
+create table order_status
 (
     id int not null primary key auto_increment,
     status_name varchar(100) not null
