@@ -84,19 +84,19 @@ use delta.default
 ```
 - use proceduce in trino to get metadata from delta table and sync with hive metastore
 ```
-call system.register_table(schema_name => 'default', table_name => 'users', table_location => 's3a://datalake/brozen/cdc.myshop.users');
+call system.register_table(schema_name => 'default', table_name => 'users', table_location => 's3a://datalake/sliver/cdc.myshop.users');
 
-call system.register_table(schema_name => 'default', table_name => 'brands', table_location => 's3a://datalake/brozen/cdc.myshop.brands');
+call system.register_table(schema_name => 'default', table_name => 'brands', table_location => 's3a://datalake/sliver/cdc.myshop.brands');
 
-call system.register_table(schema_name => 'default', table_name => 'products', table_location => 's3a://datalake/brozen/cdc.myshop.products');
+call system.register_table(schema_name => 'default', table_name => 'products', table_location => 's3a://datalake/sliver/cdc.myshop.products');
 
-call system.register_table(schema_name => 'default', table_name => 'order_detail', table_location => 's3a://datalake/brozen/cdc.myshop.order_detail');
+call system.register_table(schema_name => 'default', table_name => 'order_detail', table_location => 's3a://datalake/sliver/cdc.myshop.order_detail');
 
-call system.register_table(schema_name => 'default', table_name => 'orders', table_location => 's3a://datalake/brozen/cdc.myshop.orders');
+call system.register_table(schema_name => 'default', table_name => 'orders', table_location => 's3a://datalake/sliver/cdc.myshop.orders');
 
-call system.register_table(schema_name => 'default', table_name => 'catagories', table_location => 's3a://datalake/brozen/cdc.myshop.categories');
+call system.register_table(schema_name => 'default', table_name => 'catagories', table_location => 's3a://datalake/sliver/cdc.myshop.categories');
 
-call system.register_table(schema_name => 'default', table_name => 'inventory', table_location => 's3a://datalake/brozen/cdc.myshop.inventory');
+call system.register_table(schema_name => 'default', table_name => 'inventory', table_location => 's3a://datalake/sliver/cdc.myshop.inventory');
 
-call system.register_table(schema_name => 'default', table_name => 'order_status', table_location => 's3a://datalake/brozen/cdc.myshop.order_status');
+call system.register_table(schema_name => 'default', table_name => 'order_status', table_location => 's3a://datalake/sliver/cdc.myshop.order_status');
 ```
