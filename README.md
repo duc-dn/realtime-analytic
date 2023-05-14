@@ -19,7 +19,7 @@ docker cp ./docker-config/spark/lib/. master:/opt/spark/jars
 docker cp ./docker-config/spark/lib/. worker-a:/opt/spark/jars
 docker cp ./docker-config/spark/lib/. worker-b:/opt/spark/jars
 
-docker exec -it master spark-submit --master spark://master:7077 /opt/workspace/main.py
+docker exec -it master spark-submit --master spark://master:7077 --packages io.delta:delta-core_2.12:2.0.0 /opt/workspace/main.py
 ```
 ---
 #### Superset

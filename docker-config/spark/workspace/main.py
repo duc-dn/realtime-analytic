@@ -69,7 +69,7 @@ class DeltaSink:
 
         self._spark_sc = self.spark.sparkContext
         self._spark_sc.setLogLevel("ERROR")
-        self.delta_tbl_loc = "s3a://datalake/brozen/"
+        self.delta_tbl_loc = "s3a://datalake/sliver/"
         self.table_mappings = TABLE_MAPPINGS
         self.kafka_bootstrap_servers = KAFKA_BOOTSTRAP_SERVERS
 
@@ -198,7 +198,7 @@ class DeltaSink:
                 df.writeStream.foreachBatch(self.foreach_batch_function_incremental)
                 .trigger(processingTime="60 seconds")
                 .option(
-                    "checkpointLocation", f"s3a://datalake/brozen/checkpoint/{topic}"
+                    "checkpointLocation", f"s3a://datalake/sliver/checkpoint/{topic}"
                 )
                 .start()
             )
@@ -276,14 +276,14 @@ class DeltaSink:
                 .write.format("delta")
                 .partitionBy(["year", "month", "day"])
                 .mode("overwrite")
-                .save(f"s3a://datalake/brozen/{topic}")
+                .save(f"s3a://datalake/sliver/{topic}")
             )
         else:
             (
                 df.where("op <> 'd'")
                 .write.format("delta")
                 .mode("overwrite")
-                .save(f"s3a://datalake/brozen/{topic}")
+                .save(f"s3a://datalake/sliver/{topic}")
             )
 
     def run(self) -> None:
