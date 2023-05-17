@@ -12,7 +12,7 @@ docker exec connect curl -X POST -H "Content-Type:application/json" -d @/connect
 docker exec connect curl -X DELETE http://localhost:8083/connectors/myshop-connector
 ```
 ---
-#### Spark
+#### Running with Spark cluster
 - Copy jars file into spark master and spark worker
 ```
 docker cp ./docker-config/spark/lib/. master:/opt/spark/jars
