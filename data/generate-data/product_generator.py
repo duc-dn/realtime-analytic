@@ -91,7 +91,5 @@ if __name__ == "__main__":
         database=MYSQL_DATABASE,
     )
 
-    while True:
-        with p.get_connection() as conn:
-            p.insert_products(conn)
-        sleep(0.1)
+    with p.get_connection() as conn:
+        p.insert_products(conn)

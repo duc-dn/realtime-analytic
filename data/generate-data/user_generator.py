@@ -77,12 +77,13 @@ class UserGenerator:
                 ].values.tolist()
                 cursor.executemany(sql, users)
                 print(f"Inserted {len(users)} users from user.csv")
+                conn.commit()
                 return
             else:
                 users_item = self.users_dummy()
                 print(users_item)
                 cursor.execute(sql, users_item)
-            conn.commit()
+                conn.commit()
         except Exception as e:
             logger.error(e)
 
@@ -103,7 +104,4 @@ if __name__ == "__main__":
         password=MYSQL_PASSWORD,
         database=MYSQL_DATABASE,
     )
-
-    while True:
-        u.run()
-        sleep(0.1)
+    u.run()
