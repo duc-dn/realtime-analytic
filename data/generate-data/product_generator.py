@@ -68,12 +68,13 @@ class ProductGenerator:
                 ].values.tolist()
                 cursor.executemany(sql, products)
                 print(f"Inserted {len(products)} products from products.csv")
+                conn.commit()
                 return
             else:
                 product_item = self.product_dummy()
                 print(product_item)
                 cursor.execute(sql, product_item)
-            conn.commit()
+                conn.commit()
         except Exception as e:
             logger.error(e)
 
