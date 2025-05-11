@@ -1,0 +1,5 @@
+id,status_name
+1, order received
+2, processing
+3, cancelled
+4, Delivered

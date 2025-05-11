@@ -11,7 +11,7 @@ from util.logger import logger
 
 
 class UserGenerator:
-    def __init__(self):
+    def __init__(self, host, user, password, database):
         self.local_time = datetime.datetime.now()
         self.time_days = 86400
         self.fake = Faker()
@@ -20,10 +20,10 @@ class UserGenerator:
             pool_name="mypool",
             pool_size=5,
             pool_reset_session=True,
-            host="mysql",
-            user="root",
-            password="debezium",
-            database="myshop",
+            host=host,
+            user=user,
+            password=password,
+            database=database,
         )
 
     def get_connection(self):
@@ -60,9 +60,28 @@ class UserGenerator:
                 VALUES (%s, %s, %s, %s, %s, %s)
             """
 
-            users_item = self.users_dummy()
-            print(users_item)
-            cursor.execute(sql, users_item)
+            # Đọc user từ file user.csv nếu có, ưu tiên file trước
+            user_csv_path = f"{os.getcwd()}/data/users.csv"
+            if os.path.exists(user_csv_path):
+                df = pd.read_csv(user_csv_path)
+                # Giả sử file user.csv có các cột: username, fullname, email, address, phone_number, created_at
+                users = df[
+                    [
+                        "username",
+                        "fullname",
+                        "email",
+                        "address",
+                        "phone_number",
+                        "created_at",
+                    ]
+                ].values.tolist()
+                cursor.executemany(sql, users)
+                print(f"Inserted {len(users)} users from user.csv")
+                return
+            else:
+                users_item = self.users_dummy()
+                print(users_item)
+                cursor.execute(sql, users_item)
             conn.commit()
         except Exception as e:
             logger.error(e)
@@ -73,8 +92,18 @@ class UserGenerator:
 
 
 if __name__ == "__main__":
-    u = UserGenerator()
+    MYSQL_HOST = os.getenv("MYSQL_HOST", "localhost")
+    MYSQL_USER = os.getenv("MYSQL_USER", "root")
+    MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "debezium")
+    MYSQL_DATABASE = os.getenv("MYSQL_DATABASE", "myshop")
+
+    u = UserGenerator(
+        host=MYSQL_HOST,
+        user=MYSQL_USER,
+        password=MYSQL_PASSWORD,
+        database=MYSQL_DATABASE,
+    )
 
     while True:
         u.run()
-        sleep(10)
+        sleep(0.1)

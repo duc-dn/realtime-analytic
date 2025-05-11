@@ -6,10 +6,11 @@ import mysql.connector
 from faker import Faker
 from faker.providers import DynamicProvider
 from util.logger import logger
+import os  # Add this import
 
 
 class OrderGenerator:
-    def __init__(self) -> None:
+    def __init__(self, host, user, password, database) -> None:
         self.local_time = datetime.datetime.now()
         self.time_days = 86400
 
@@ -24,10 +25,10 @@ class OrderGenerator:
             pool_name="mypool",
             pool_size=5,
             pool_reset_session=True,
-            host="mysql",
-            user="root",
-            password="debezium",
-            database="myshop",
+            host=host,
+            user=user,
+            password=password,
+            database=database,
         )
 
     def _get_connection(self):
@@ -73,6 +74,22 @@ class OrderGenerator:
                 self.local_time.timestamp()
             ) - self.time_days * random.randint(0, 50)
 
+            # Lấy danh sách user_id hợp lệ
+            cursor.execute("SELECT id FROM users")
+            user_ids = [row[0] for row in cursor.fetchall()]
+            if not user_ids:
+                logger.error("No users found in users table.")
+                return
+            user_id = random.choice(user_ids)
+
+            # Lấy danh sách product_id hợp lệ
+            cursor.execute("SELECT id, price FROM products")
+            products = cursor.fetchall()
+            if not products:
+                logger.error("No products found in products table.")
+                return
+            product_list = [(row[0], row[1]) for row in products]
+
             # INSERT ORDER TABLE
             sql = """
                 INSERT INTO orders
@@ -85,7 +102,7 @@ class OrderGenerator:
                 value (%s, %s, %s, %s)
             """
             val = (
-                random.randint(0, 10000),
+                user_id,
                 self.fake.payment_type(),
                 random.randint(1, 4),
                 time_order,
@@ -102,18 +119,9 @@ class OrderGenerator:
             logger.info(f"=============== order_id: {order_id} ==============")
 
             order_details = []
-            price_dict = {}
-            for i in range(0, order_number):
-                product_id = random.randint(1, 1000)
-
-                if product_id not in price_dict:
-                    cursor.execute(
-                        f"select price from products where id = {product_id}"
-                    )
-                    price_dict[product_id] = cursor.fetchone()[0]
-
+            for i in range(order_number):
+                product_id, price = random.choice(product_list)
                 quantity = random.randint(1, 4)
-                price = price_dict[product_id]
                 item_price = price * quantity
 
                 order_details.append(
@@ -129,8 +137,18 @@ class OrderGenerator:
     def _run(self) -> None:
         while True:
             self.generate_order()
-            sleep(10)
+            sleep(1)
 
 
 if __name__ == "__main__":
-    OrderGenerator()._run()
+    MYSQL_HOST = os.getenv("MYSQL_HOST", "localhost")
+    MYSQL_USER = os.getenv("MYSQL_USER", "root")
+    MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "debezium")
+    MYSQL_DATABASE = os.getenv("MYSQL_DATABASE", "myshop")
+
+    OrderGenerator(
+        host=MYSQL_HOST,
+        user=MYSQL_USER,
+        password=MYSQL_PASSWORD,
+        database=MYSQL_DATABASE,
+    )._run()
