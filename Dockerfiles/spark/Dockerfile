@@ -42,6 +42,8 @@ ln -sf /dev/stdout $SPARK_WORKER_LOG
 
 ENV PATH /opt/spark/bin:/opt/spark/sbin:$PATH
 
+RUN pip install confluent_kafka==2.2.0
+
 COPY start-spark.sh /
 
 CMD ["/bin/bash", "/start-spark.sh"]
